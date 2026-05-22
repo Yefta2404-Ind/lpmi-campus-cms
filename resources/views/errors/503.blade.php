@@ -3,46 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pemeliharaan — LPM Universitas Gunung Kidul</title>
+<title>Pemeliharaan — LPPM Universitas Gunung Kidul</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 /* ─── Reset & Base ─── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --white:    #ffffff;
-  --off:      #fafafa;
-  --f1:       #f4f4f5;
-  --f2:       #eeeeef;
-  --border:   #e4e4e7;
-  --border2:  #d4d4d8;
-  --t1:       #09090b;
-  --t2:       #52525b;
-  --t3:       #a1a1aa;
-  --blue:     #2563eb;
-  --blue-lt:  #eff6ff;
-  --blue-mid: #bfdbfe;
-  --green:    #16a34a;
-  --green-lt: #f0fdf4;
-  --amber:    #d97706;
-  --serif: 'DM Serif Display', Georgia, serif;
-  --sans:  'DM Sans', system-ui, sans-serif;
-  --mono:  'DM Mono', monospace;
-  --radius: 14px;
-  --shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
-  --shadow-md: 0 4px 16px rgba(0,0,0,.07), 0 1px 4px rgba(0,0,0,.04);
+  /* === PALET BARU DENGAN DOMINAN GOLD/LIME === */
+  --primary:        #0B4650;   /* teal gelap (aksen pendukung) */
+  --primary-light:  #155e6e;   /* teal medium */
+  --primary-dark:   #072e38;   /* teal sangat tua */
+  --primary-mid:    #0e5262;   /* teal tengah */
+
+  /* === WARNA DOMINAN: LIME YELLOW (GOLD) === */
+  --gold:           #E6FF2B;   /* lime yellow utama */
+  --gold-light:     #eeff55;   /* lime terang */
+  --gold-dark:      #c4db00;   /* lime tua */
+
+  /* === WARNA NETRAL & UI === */
+  --secondary:      #F9F7F2;   /* off-white utama */
+  --accent:         #fdfcf9;   /* off-white sangat terang */
+  --accent2:        #f0ede5;   /* off-white lebih hangat */
+  --text-dark:      #072e38;   /* teal sangat gelap */
+  --text-mid:       #0B4650;   /* teal medium */
+  --text-light:     #898A8D;   /* gray muted */
+  --white:          #ffffff;
+  --border:         #dddbd5;   /* border netral */
+
+  /* === SHADOW dengan sentuhan gold === */
+  --shadow-sm:  0 2px 8px rgba(11,70,80,0.08);
+  --shadow-md:  0 8px 28px rgba(11,70,80,0.13);
+  --shadow-lg:  0 20px 50px rgba(11,70,80,0.16);
+  --shadow-xl:  0 32px 70px rgba(11,70,80,0.20);
+  --shadow-gold: 0 8px 20px rgba(230,255,43,0.25);
+
+  --font-primary: 'DM Sans', sans-serif;
+  --font-roboto:  'DM Sans', sans-serif;
+  --font-heading: 'Cormorant Garamond', serif;
+  --container-max: 1400px;
+  --container-pad: 40px;
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  22px;
+  --radius-xl:  32px;
+  --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: var(--sans);
+  font-family: var(--font-primary);
   background: var(--white);
-  color: var(--t1);
+  color: var(--text-dark);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -54,12 +71,12 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255,255,255,.92);
+  background: rgba(255,255,255,.94);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   padding: 0 clamp(1.2rem, 5vw, 3rem);
-  height: 56px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -71,55 +88,63 @@ body {
   gap: 10px;
   text-decoration: none;
 }
+
 .nav-logo-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--border);
-  background: var(--f1);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
-.nav-logo-icon svg { color: var(--blue); }
+
+.nav-logo-icon svg { color: var(--primary-dark); stroke-width: 1.8; }
+
 .nav-logo-label {
   font-size: 13px;
-  font-weight: 500;
-  color: var(--t1);
+  font-weight: 600;
+  color: var(--text-dark);
   line-height: 1.3;
+  font-family: var(--font-primary);
 }
+
 .nav-logo-label span {
   display: block;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 400;
-  color: var(--t3);
+  color: var(--text-light);
 }
 
 .nav-badge {
   display: flex;
   align-items: center;
-  gap: 7px;
-  font-family: var(--mono);
+  gap: 8px;
+  font-family: var(--font-primary);
   font-size: 11px;
   font-weight: 500;
-  color: var(--amber);
-  background: #fffbeb;
-  border: 1px solid #fde68a;
+  color: var(--primary-dark);
+  background: var(--gold-light);
+  border: 1px solid var(--gold-dark);
   border-radius: 100px;
-  padding: 5px 12px;
+  padding: 5px 14px;
   letter-spacing: .04em;
+  box-shadow: var(--shadow-gold);
 }
+
 .nav-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--amber);
+  background: var(--primary-dark);
   animation: pulse 2s ease-in-out infinite;
 }
+
 @keyframes pulse {
-  0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(217,119,6,.4); }
-  50%      { opacity: .6; box-shadow: 0 0 0 5px rgba(217,119,6,0); }
+  0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(11,70,80,.4); }
+  50%      { opacity: .6; box-shadow: 0 0 0 5px rgba(230,255,43,0.6); }
 }
 
 /* ─── Main Layout ─── */
@@ -134,258 +159,327 @@ main {
 
 .hero {
   width: 100%;
-  max-width: 520px;
+  max-width: 540px;
   text-align: center;
   animation: fadeUp .7s cubic-bezier(.16,1,.3,1) both;
 }
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: none; }
 }
 
-/* ─── Icon ─── */
+/* ─── Icon dengan dominasi gold ─── */
 .icon-wrap {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 72px;
-  height: 72px;
-  border-radius: 20px;
-  background: var(--f1);
-  border: 1px solid var(--border);
+  width: 76px;
+  height: 76px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(145deg, var(--gold-light), var(--gold));
+  border: 1px solid var(--gold-dark);
   margin-bottom: 28px;
+  box-shadow: var(--shadow-gold);
   animation: fadeUp .7s .05s cubic-bezier(.16,1,.3,1) both;
 }
+
 .icon-wrap svg {
-  color: var(--blue);
+  color: var(--primary-dark);
   animation: rock 3.5s ease-in-out infinite;
   transform-origin: center;
+  stroke-width: 1.6;
 }
+
 @keyframes rock { 0%,100% { transform: rotate(-10deg); } 50% { transform: rotate(10deg); } }
 
-/* ─── Typography ─── */
+/* ─── Typography dengan aksen gold ─── */
 .eyebrow {
-  font-family: var(--mono);
+  font-family: var(--font-primary);
   font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .1em;
+  font-weight: 600;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--blue);
+  color: var(--gold-dark);
+  background: linear-gradient(135deg, var(--gold-dark), var(--primary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 14px;
   animation: fadeUp .7s .08s cubic-bezier(.16,1,.3,1) both;
 }
 
 h1 {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 5vw, 2.9rem);
-  font-weight: 400;
-  color: var(--t1);
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  font-weight: 600;
+  color: var(--text-dark);
   line-height: 1.12;
   letter-spacing: -.02em;
   margin-bottom: 16px;
   animation: fadeUp .7s .1s cubic-bezier(.16,1,.3,1) both;
 }
+
 h1 em {
   font-style: italic;
-  color: var(--t3);
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .desc {
   font-size: 15px;
-  color: var(--t2);
-  line-height: 1.72;
-  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.65;
+  font-weight: 400;
   max-width: 400px;
   margin: 0 auto 36px;
   animation: fadeUp .7s .12s cubic-bezier(.16,1,.3,1) both;
 }
 
-/* ─── Countdown ─── */
+/* ─── Countdown dengan border gold ─── */
 .countdown-wrap {
   margin-bottom: 32px;
   animation: fadeUp .7s .14s cubic-bezier(.16,1,.3,1) both;
 }
+
 .countdown-label {
-  font-family: var(--mono);
+  font-family: var(--font-primary);
   font-size: 10.5px;
-  color: var(--t3);
+  font-weight: 500;
+  color: var(--text-light);
   letter-spacing: .09em;
   text-transform: uppercase;
   margin-bottom: 14px;
 }
+
 .countdown {
   display: inline-flex;
   align-items: flex-end;
   gap: 0;
   background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 16px 24px 14px;
-  box-shadow: var(--shadow);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius-md);
+  padding: 18px 26px 14px;
+  box-shadow: var(--shadow-gold);
+  backdrop-filter: blur(2px);
 }
-.t-unit { display: flex; flex-direction: column; align-items: center; min-width: 56px; }
+
+.t-unit { display: flex; flex-direction: column; align-items: center; min-width: 58px; }
+
 .t-num {
-  font-family: 'Roboto', 'Google Sans', sans-serif;
-  font-size: clamp(2.8rem, 6vw, 3.6rem);
-  font-weight: 300;
-  color: var(--t1);
+  font-family: var(--font-primary);
+  font-size: clamp(2.8rem, 6vw, 3.8rem);
+  font-weight: 600;
+  background: linear-gradient(145deg, var(--primary-dark), var(--primary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   line-height: 1;
   font-variant-numeric: tabular-nums;
   letter-spacing: -.02em;
 }
+
 .t-lbl {
-  font-family: var(--mono);
+  font-family: var(--font-primary);
   font-size: 9.5px;
-  color: var(--t3);
+  font-weight: 500;
+  color: var(--gold-dark);
   letter-spacing: .09em;
   text-transform: uppercase;
   margin-top: 6px;
 }
+
 .t-sep {
-  font-family: 'Roboto', sans-serif;
-  font-size: clamp(2rem, 4vw, 2.6rem);
-  color: var(--border2);
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--gold);
   font-weight: 300;
   line-height: 1;
-  padding: 0 4px;
-  margin-bottom: 20px;
+  padding: 0 6px;
+  margin-bottom: 22px;
   flex-shrink: 0;
+  text-shadow: 0 0 2px rgba(230,255,43,0.5);
 }
 
-/* ─── Progress ─── */
+/* ─── Progress dengan fill gold ─── */
 .progress-wrap {
   margin-bottom: 32px;
   animation: fadeUp .7s .16s cubic-bezier(.16,1,.3,1) both;
 }
+
 .progress-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 8px;
 }
+
 .progress-top span {
-  font-size: 12px;
-  color: var(--t3);
-  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-light);
+  font-family: var(--font-primary);
   letter-spacing: .04em;
 }
+
 .progress-top strong {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--blue);
-  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: var(--font-primary);
 }
+
 .progress-track {
-  height: 3px;
-  background: var(--f2);
+  height: 4px;
+  background: var(--accent2);
   border-radius: 100px;
   overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
 }
+
 .progress-fill {
   height: 100%;
-  background: var(--blue);
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
   border-radius: 100px;
-  transition: width 1.5s ease;
+  transition: width 1.2s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 0 6px var(--gold);
 }
+
 .progress-fill::after {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.45), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.5), transparent);
   animation: shim 2.4s ease-in-out infinite;
   transform: translateX(-100%);
 }
+
 @keyframes shim { to { transform: translateX(200%); } }
 
-@keyframes spin { to { transform: rotate(360deg); } }
-
-/* ─── ETA Row ─── */
+/* ─── ETA Row dengan aksen gold ─── */
 .eta-row {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 13px 16px;
-  background: var(--off);
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  gap: 12px;
+  padding: 14px 18px;
+  background: linear-gradient(120deg, var(--secondary), #fff8e0);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius-md);
   margin-bottom: 28px;
   text-align: left;
+  box-shadow: var(--shadow-gold);
   animation: fadeUp .7s .18s cubic-bezier(.16,1,.3,1) both;
 }
+
 .eta-icon {
-  width: 28px; height: 28px;
-  border-radius: 8px;
-  background: var(--f2);
-  border: 1px solid var(--border);
+  width: 32px; height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--gold-light);
+  border: 1px solid var(--gold-dark);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
-.eta-icon svg { color: var(--t2); }
-.eta-text { font-size: 12.5px; color: var(--t2); line-height: 1.5; }
-.eta-text strong { color: var(--t1); font-weight: 500; }
 
-/* ─── Contact ─── */
+.eta-icon svg { color: var(--primary-dark); }
+
+.eta-text { 
+  font-size: 13px; 
+  color: var(--text-mid); 
+  line-height: 1.5; 
+  font-weight: 500;
+}
+
+.eta-text strong { 
+  background: linear-gradient(145deg, var(--gold-dark), var(--gold));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* ─── Contact dengan link berwarna gold ─── */
 .contact {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   font-size: 13px;
-  color: var(--t3);
+  color: var(--text-light);
   animation: fadeUp .7s .20s cubic-bezier(.16,1,.3,1) both;
 }
-.contact a {
-  color: var(--blue);
-  text-decoration: none;
-  font-weight: 500;
-}
-.contact a:hover { text-decoration: underline; }
 
-/* ─── Footer ─── */
+.contact a {
+  color: var(--gold-dark);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition);
+  border-bottom: 1px dotted transparent;
+}
+
+.contact a:hover { 
+  color: var(--gold);
+  border-bottom-color: var(--gold-dark);
+  text-shadow: 0 0 2px rgba(230,255,43,0.3);
+}
+
+/* ─── Footer dengan sentuhan gold ─── */
 footer {
-  border-top: 1px solid var(--border);
-  padding: 20px clamp(1.2rem, 5vw, 3rem);
+  border-top: 1px solid var(--gold);
+  background: linear-gradient(180deg, var(--secondary), #fffef7);
+  padding: 22px clamp(1.2rem, 5vw, 3rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
-  background: var(--off);
 }
+
 .foot-copy {
   font-size: 12px;
-  color: var(--t3);
+  color: var(--text-light);
+  font-weight: 400;
 }
+
 .foot-links {
   display: flex;
-  gap: 20px;
+  gap: 24px;
   flex-wrap: wrap;
 }
+
 .foot-links a {
   font-size: 12px;
-  color: var(--t3);
+  color: var(--gold-dark);
   text-decoration: none;
-  transition: color .15s;
+  transition: color var(--transition);
+  font-weight: 500;
 }
-.foot-links a:hover { color: var(--t2); }
+
+.foot-links a:hover { color: var(--gold); text-shadow: 0 0 2px rgba(230,255,43,0.4); }
 
 /* ─── Responsive ─── */
 @media (max-width: 600px) {
   .nav-logo-label span { display: none; }
-  .countdown { padding: 14px 16px; }
-  .t-unit { min-width: 46px; }
-  .t-sep { padding: 0 2px; }
+  .countdown { padding: 14px 18px; }
+  .t-unit { min-width: 48px; }
+  .t-sep { padding: 0 3px; margin-bottom: 18px; }
   footer {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
   }
-  .foot-links { gap: 14px; }
+  .foot-links { gap: 16px; }
 }
 
 @media (max-width: 400px) {
-  .countdown { padding: 12px; gap: 0; }
-  .t-unit { min-width: 38px; }
+  .countdown { padding: 12px 14px; gap: 0; }
+  .t-unit { min-width: 40px; }
+  .t-sep { padding: 0 2px; }
+  .eta-row { padding: 10px 14px; }
 }
 
 /* ─── Print ─── */
@@ -397,7 +491,7 @@ footer {
 </head>
 <body>
 
-<!-- ═══ TOP NAV ═══ -->
+<!-- ═══ TOP NAV (nama diubah menjadi LPPM) ═══ -->
 <nav class="topnav">
   <a href="#" class="nav-logo">
     <div class="nav-logo-icon">
@@ -407,13 +501,13 @@ footer {
       </svg>
     </div>
     <div class="nav-logo-label">
-      LPM Universitas Gunung Kidul
-      <span>Lembaga Penjaminan Mutu</span>
+      LPPM Universitas Gunung Kidul
+      <span>Lembaga Penelitian & Pengabdian Masyarakat</span>
     </div>
   </a>
   <div class="nav-badge">
     <span class="nav-dot"></span>
-    Maintenance
+    Maintenance Mode
   </div>
 </nav>
 
@@ -431,7 +525,7 @@ footer {
 
     <h1>Kami sedang<br>memperbarui <em>sistem</em></h1>
 
-    <p class="desc">Website LPM sedang dalam pemeliharaan rutin untuk meningkatkan performa dan keandalan layanan. Mohon bersabar — kami segera kembali.</p>
+    <p class="desc">Website LPPM sedang dalam pemeliharaan rutin untuk meningkatkan performa dan keandalan layanan. Mohon bersabar — kami segera kembali.</p>
 
     <!-- Countdown -->
     <div class="countdown-wrap">
@@ -465,8 +559,7 @@ footer {
       </div>
     </div>
 
-
-    <!-- ETA -->
+    <!-- ETA dengan aksen gold -->
     <div class="eta-row">
       <div class="eta-icon">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -477,32 +570,33 @@ footer {
       <div class="eta-text">Perkiraan selesai: <strong id="etaText">± 1–2 jam lagi</strong></div>
     </div>
 
-    <!-- Contact -->
+    <!-- Kontak support dengan warna gold -->
     <div class="contact">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
         <polyline points="22,6 12,13 2,6"/>
       </svg>
-      Ada pertanyaan? Hubungi kami di <a href="/cdn-cgi/l/email-protection#caa6baa78abfada1e4aba9e4a3ae"><span class="__cf_email__" data-cfemail="573b273a1722303c793634793e33">[email&#160;protected]</span></a>
+      <span>Ada pertanyaan? <a href="mailto:lppm@ugk.ac.id">lppm@ugk.ac.id</a></span>
     </div>
 
   </div>
 </main>
 
-<!-- ═══ FOOTER ═══ -->
 <footer>
-  <p class="foot-copy">© 2025 LPM Universitas Gunung Kidul. Semua hak dilindungi.</p>
-  <nav class="foot-links">
-    <a href="#">Kebijakan Privasi</a>
-    <a href="#">Ketentuan Layanan</a>
-    <a href="#">Hubungi Kami</a>
-  </nav>
+  <div class="foot-copy">© 2025 LPPM Universitas Gunung Kidul — Membangun inovasi</div>
+  <div class="foot-links">
+    <a href="#">Beranda</a>
+    <a href="#">Pengumuman</a>
+    <a href="#">Kontak</a>
+    <a href="#">Status</a>
+  </div>
 </footer>
 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
 (function () {
   /* ── Countdown — persist via localStorage ── */
-  var KEY = 'lpm_maint_end';
+  var KEY = 'lppm_maint_end';   /* diubah jadi LPPM */
   var stored = localStorage.getItem(KEY);
   var end = stored ? parseInt(stored, 10) : Date.now() + (2 * 60 + 8) * 60000;
   if (!stored) localStorage.setItem(KEY, String(end));
@@ -515,7 +609,7 @@ footer {
       document.getElementById('hours').textContent   = '00';
       document.getElementById('minutes').textContent = '00';
       document.getElementById('seconds').textContent = '00';
-      document.getElementById('etaText').textContent = 'sebentar lagi';
+      document.getElementById('etaText').innerHTML = 'sebentar lagi';
       return;
     }
     document.getElementById('hours').textContent   = pad(d / 3600000);
@@ -526,7 +620,7 @@ footer {
   setInterval(tick, 1000);
 
   /* ── Progress — persist via localStorage ── */
-  var PKEY = 'lpm_maint_pct';
+  var PKEY = 'lppm_maint_pct';  /* diubah jadi LPPM */
   var p = parseFloat(localStorage.getItem(PKEY) || '74');
   var fill  = document.getElementById('progressFill');
   var label = document.getElementById('pctLabel');
@@ -534,8 +628,8 @@ footer {
 
   fill.style.width  = p + '%';
   label.textContent = Math.round(p) + '%';
-  if      (p >= 88) eta.textContent = '< 30 menit lagi';
-  else if (p >= 78) eta.textContent = '± 1 jam lagi';
+  if      (p >= 88) eta.innerHTML = '< 30 menit lagi';
+  else if (p >= 78) eta.innerHTML = '± 1 jam lagi';
 
   setInterval(function () {
     if (p >= 94) return;
@@ -543,8 +637,8 @@ footer {
     localStorage.setItem(PKEY, String(p));
     fill.style.width  = p + '%';
     label.textContent = Math.round(p) + '%';
-    if      (p >= 88) eta.textContent = '< 30 menit lagi';
-    else if (p >= 78) eta.textContent = '± 1 jam lagi';
+    if      (p >= 88) eta.innerHTML = '< 30 menit lagi';
+    else if (p >= 78) eta.innerHTML = '± 1 jam lagi';
   }, 7000);
 })();
 </script>

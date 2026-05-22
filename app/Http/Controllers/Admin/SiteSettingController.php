@@ -19,23 +19,36 @@ public function update(Request $request)
 {
     $settings = SiteSetting::firstOrCreate([]);
 
-    $request->validate([
-        'site_name'          => 'required|string|max:255',
-        'site_subtitle'      => 'nullable|string|max:255',
-        'phone'              => 'nullable|string|max:255',
-        'email'              => 'nullable|email|max:255',
-        'address'            => 'nullable|string|max:255',
-        'facebook'           => 'nullable|url|max:255',
-        'twitter'            => 'nullable|url|max:255',
-        'instagram'          => 'nullable|url|max:255',
-        'youtube'            => 'nullable|url|max:255',
-        'footer_description' => 'nullable|string',
-        'footer_address'     => 'nullable|string|max:255',
-        'footer_phone'       => 'nullable|string|max:255',
-        'footer_email'       => 'nullable|email|max:255',
-        'footer_website'     => 'nullable|url|max:255',
-        'logo'               => 'nullable|image|max:2048',
-    ]);
+$request->validate([
+    'site_name'          => 'required|string|max:255',
+    'site_subtitle'      => 'nullable|string|max:255',
+    'phone'              => 'nullable|string|max:255',
+    'email'              => 'nullable|email|max:255',
+    'address'            => 'nullable|string|max:255',
+    'facebook'           => 'nullable|url|max:255',
+    'twitter'            => 'nullable|url|max:255',
+    'instagram'          => 'nullable|url|max:255',
+    'youtube'            => 'nullable|url|max:255',
+    'footer_description' => 'nullable|string',
+    'footer_address'     => 'nullable|string|max:255',
+    'footer_phone'       => 'nullable|string|max:255',
+    'footer_email'       => 'nullable|email|max:255',
+    'footer_website'     => 'nullable|url|max:255',
+    'logo'               => 'nullable|image|max:2048',
+
+    // TAMBAHAN WARNA
+    'primary_color'      => 'nullable|string|max:20',
+    'primary_light'      => 'nullable|string|max:20',
+    'primary_dark'       => 'nullable|string|max:20',
+
+    'gold_color'         => 'nullable|string|max:20',
+    'gold_light'         => 'nullable|string|max:20',
+    'gold_dark'          => 'nullable|string|max:20',
+
+    'secondary_color'    => 'nullable|string|max:20',
+    'accent_color'       => 'nullable|string|max:20',
+    'accent2_color'      => 'nullable|string|max:20',
+]);
 
     $data = $request->except('logo');
 

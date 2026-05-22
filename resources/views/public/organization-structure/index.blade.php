@@ -539,7 +539,7 @@ if ($structures) {
 <div class="so-hero">
     <div class="so-hero-inner">
         <div class="so-hero-text">
-            <div class="so-hero-eyebrow">Lembaga Penjaminan Mutu Internal</div>
+            <div class="so-hero-eyebrow">FAKULTAS SAINS & TEKNOLOGI</div>
             <h1 class="so-hero-title">Struktur <em>Organisasi</em></h1>
             <p class="so-hero-sub">Susunan kepemimpinan dan keanggotaan resmi LPPMI</p>
         </div>

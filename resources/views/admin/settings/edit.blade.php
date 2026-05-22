@@ -290,6 +290,487 @@
                 </div>
             </div>
 
+            {{-- ==================== 05 TEMA WEBSITE (30 KOMBINASI WARNA) ==================== --}}
+            <div class="card card-full">
+                <div class="card-header">
+                    <span class="card-badge badge-purple">05</span>
+                    <div>
+                        <h2 class="card-title">🎨 Tema Website</h2>
+                        <p class="card-desc">
+                            Pilih dari 30 kombinasi warna profesional atau atur manual
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card-body">
+
+                    {{-- LIVE PREVIEW PANEL --}}
+                    <div class="theme-preview-panel" id="themePreviewPanel">
+                        <div class="preview-header">
+                            <span class="preview-badge">Live Preview</span>
+                            <span class="preview-hint">Perubahan warna terlihat langsung di sini</span>
+                        </div>
+                        <div class="preview-samples">
+                            <div class="sample-group">
+                                <div class="sample-primary" id="previewPrimary" style="background-color: {{ old('primary_color', $settings->primary_color ?? '#0B4650') }}">
+                                    <span>Primary Color</span>
+                                </div>
+                                <div class="sample-gold" id="previewGold" style="background-color: {{ old('gold_color', $settings->gold_color ?? '#E6FF2B') }}">
+                                    <span>Gold Accent</span>
+                                </div>
+                            </div>
+                            <div class="sample-text">
+                                <div class="text-dark" id="previewTextDark">Contoh Teks Gelap</div>
+                                <div class="text-light" id="previewTextLight">Contoh Teks Terang</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- KATEGORI PRESET --}}
+                    <div class="preset-categories">
+                        <button type="button" class="category-btn active" data-category="all">Semua (30)</button>
+                        <button type="button" class="category-btn" data-category="cool">❄️ Cool (6)</button>
+                        <button type="button" class="category-btn" data-category="warm">🔥 Warm (6)</button>
+                        <button type="button" class="category-btn" data-category="nature">🌿 Nature (6)</button>
+                        <button type="button" class="category-btn" data-category="vibrant">💫 Vibrant (6)</button>
+                        <button type="button" class="category-btn" data-category="elegant">👑 Elegant (6)</button>
+                    </div>
+
+                    {{-- PRESET GRID DENGAN 30 KOMBINASI --}}
+                    <div class="form-group">
+                        <label class="form-label">🎨 Pilih Kombinasi Warna</label>
+                        <div class="preset-grid" id="presetGrid">
+                            
+                            {{-- ========== COOL THEMES (6) ========== --}}
+                            <div class="preset-card" data-preset="ocean" data-category="cool">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#0B4650"></span>
+                                    <span class="color-chip" style="background:#E6FF2B"></span>
+                                    <span class="color-chip" style="background:#F9F7F2"></span>
+                                </div>
+                                <span class="preset-name">🌊 Ocean Teal</span>
+                                <span class="preset-badge cool">Cool</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="sky" data-category="cool">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#0284c7"></span>
+                                    <span class="color-chip" style="background:#fcd34d"></span>
+                                    <span class="color-chip" style="background:#f0f9ff"></span>
+                                </div>
+                                <span class="preset-name">☁️ Sky Blue</span>
+                                <span class="preset-badge cool">Cool</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="twilight" data-category="cool">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#4c1d95"></span>
+                                    <span class="color-chip" style="background:#f472b6"></span>
+                                    <span class="color-chip" style="background:#faf5ff"></span>
+                                </div>
+                                <span class="preset-name">🌙 Twilight Purple</span>
+                                <span class="preset-badge cool">Cool</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="ice" data-category="cool">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#0f172a"></span>
+                                    <span class="color-chip" style="background:#38bdf8"></span>
+                                    <span class="color-chip" style="background:#f8fafc"></span>
+                                </div>
+                                <span class="preset-name">🧊 Ice Blue</span>
+                                <span class="preset-badge cool">Cool</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="mint" data-category="cool">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#134e4a"></span>
+                                    <span class="color-chip" style="background:#2dd4bf"></span>
+                                    <span class="color-chip" style="background:#f0fdfa"></span>
+                                </div>
+                                <span class="preset-name">🌿 Mint Fresh</span>
+                                <span class="preset-badge cool">Cool</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="navy" data-category="cool">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#1e3a8a"></span>
+                                    <span class="color-chip" style="background:#818cf8"></span>
+                                    <span class="color-chip" style="background:#eef2ff"></span>
+                                </div>
+                                <span class="preset-name">⚓ Navy Blue</span>
+                                <span class="preset-badge cool">Cool</span>
+                            </div>
+
+                            {{-- ========== WARM THEMES (6) ========== --}}
+                            <div class="preset-card" data-preset="sunset" data-category="warm">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#be123c"></span>
+                                    <span class="color-chip" style="background:#fbbf24"></span>
+                                    <span class="color-chip" style="background:#fff7ed"></span>
+                                </div>
+                                <span class="preset-name">🌅 Sunset Rose</span>
+                                <span class="preset-badge warm">Warm</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="coral" data-category="warm">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#e11d48"></span>
+                                    <span class="color-chip" style="background:#f97316"></span>
+                                    <span class="color-chip" style="background:#fff1f2"></span>
+                                </div>
+                                <span class="preset-name">🐠 Coral Reef</span>
+                                <span class="preset-badge warm">Warm</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="amber" data-category="warm">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#b45309"></span>
+                                    <span class="color-chip" style="background:#fde047"></span>
+                                    <span class="color-chip" style="background:#fffbeb"></span>
+                                </div>
+                                <span class="preset-name">🪔 Amber Glow</span>
+                                <span class="preset-badge warm">Warm</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="peach" data-category="warm">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#fb923c"></span>
+                                    <span class="color-chip" style="background:#fed7aa"></span>
+                                    <span class="color-chip" style="background:#fff7ed"></span>
+                                </div>
+                                <span class="preset-name">🍑 Peach Blush</span>
+                                <span class="preset-badge warm">Warm</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="terracotta" data-category="warm">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#9a3412"></span>
+                                    <span class="color-chip" style="background:#fdba74"></span>
+                                    <span class="color-chip" style="background:#fff7ed"></span>
+                                </div>
+                                <span class="preset-name">🏺 Terracotta</span>
+                                <span class="preset-badge warm">Warm</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="maroon" data-category="warm">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#7f1d1d"></span>
+                                    <span class="color-chip" style="background:#ef4444"></span>
+                                    <span class="color-chip" style="background:#fef2f2"></span>
+                                </div>
+                                <span class="preset-name">🍷 Maroon Wine</span>
+                                <span class="preset-badge warm">Warm</span>
+                            </div>
+
+                            {{-- ========== NATURE THEMES (6) ========== --}}
+                            <div class="preset-card" data-preset="campus" data-category="nature">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#166534"></span>
+                                    <span class="color-chip" style="background:#fde047"></span>
+                                    <span class="color-chip" style="background:#f0fdf4"></span>
+                                </div>
+                                <span class="preset-name">🌿 Campus Green</span>
+                                <span class="preset-badge nature">Nature</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="forest" data-category="nature">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#064e3b"></span>
+                                    <span class="color-chip" style="background:#a7f3d0"></span>
+                                    <span class="color-chip" style="background:#ecfdf5"></span>
+                                </div>
+                                <span class="preset-name">🌲 Forest Deep</span>
+                                <span class="preset-badge nature">Nature</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="olive" data-category="nature">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#3f6212"></span>
+                                    <span class="color-chip" style="background:#fef08a"></span>
+                                    <span class="color-chip" style="background:#fefce8"></span>
+                                </div>
+                                <span class="preset-name">🫒 Olive Garden</span>
+                                <span class="preset-badge nature">Nature</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="sage" data-category="nature">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#4b5563"></span>
+                                    <span class="color-chip" style="background:#9ca3af"></span>
+                                    <span class="color-chip" style="background:#f9fafb"></span>
+                                </div>
+                                <span class="preset-name">🍃 Sage Green</span>
+                                <span class="preset-badge nature">Nature</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="lime" data-category="nature">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#4d7c0f"></span>
+                                    <span class="color-chip" style="background:#a3e635"></span>
+                                    <span class="color-chip" style="background:#f7fee7"></span>
+                                </div>
+                                <span class="preset-name">🍋 Lime Zest</span>
+                                <span class="preset-badge nature">Nature</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="moss" data-category="nature">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#2d5a27"></span>
+                                    <span class="color-chip" style="background:#c4e6b0"></span>
+                                    <span class="color-chip" style="background:#f4f9f2"></span>
+                                </div>
+                                <span class="preset-name">🌾 Moss Green</span>
+                                <span class="preset-badge nature">Nature</span>
+                            </div>
+
+                            {{-- ========== VIBRANT THEMES (6) ========== --}}
+                            <div class="preset-card" data-preset="royal" data-category="vibrant">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#1e3a8a"></span>
+                                    <span class="color-chip" style="background:#facc15"></span>
+                                    <span class="color-chip" style="background:#eff6ff"></span>
+                                </div>
+                                <span class="preset-name">👑 Royal Blue</span>
+                                <span class="preset-badge vibrant">Vibrant</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="electric" data-category="vibrant">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#0891b2"></span>
+                                    <span class="color-chip" style="background:#2dd4bf"></span>
+                                    <span class="color-chip" style="background:#ecfeff"></span>
+                                </div>
+                                <span class="preset-name">⚡ Electric Cyan</span>
+                                <span class="preset-badge vibrant">Vibrant</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="sunshine" data-category="vibrant">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#f59e0b"></span>
+                                    <span class="color-chip" style="background:#ef4444"></span>
+                                    <span class="color-chip" style="background:#fffbeb"></span>
+                                </div>
+                                <span class="preset-name">☀️ Sunshine Burst</span>
+                                <span class="preset-badge vibrant">Vibrant</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="magenta" data-category="vibrant">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#be185d"></span>
+                                    <span class="color-chip" style="background:#f472b6"></span>
+                                    <span class="color-chip" style="background:#fff5f6"></span>
+                                </div>
+                                <span class="preset-name">🌸 Magenta Pop</span>
+                                <span class="preset-badge vibrant">Vibrant</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="neon" data-category="vibrant">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#111827"></span>
+                                    <span class="color-chip" style="background:#10b981"></span>
+                                    <span class="color-chip" style="background:#ecfdf5"></span>
+                                </div>
+                                <span class="preset-name">💚 Neon Green</span>
+                                <span class="preset-badge vibrant">Vibrant</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="crimson" data-category="vibrant">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#dc2626"></span>
+                                    <span class="color-chip" style="background:#fca5a5"></span>
+                                    <span class="color-chip" style="background:#fef2f2"></span>
+                                </div>
+                                <span class="preset-name">❤️ Crimson Red</span>
+                                <span class="preset-badge vibrant">Vibrant</span>
+                            </div>
+
+                            {{-- ========== ELEGANT THEMES (6) ========== --}}
+                            <div class="preset-card" data-preset="luxury" data-category="elegant">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#1f2937"></span>
+                                    <span class="color-chip" style="background:#d4af37"></span>
+                                    <span class="color-chip" style="background:#fef3c7"></span>
+                                </div>
+                                <span class="preset-name">✨ Luxury Gold</span>
+                                <span class="preset-badge elegant">Elegant</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="minimal" data-category="elegant">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#3f3f46"></span>
+                                    <span class="color-chip" style="background:#d4d4d8"></span>
+                                    <span class="color-chip" style="background:#fafafa"></span>
+                                </div>
+                                <span class="preset-name">⚪ Minimal Neutral</span>
+                                <span class="preset-badge elegant">Elegant</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="plum" data-category="elegant">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#6b21a5"></span>
+                                    <span class="color-chip" style="background:#e9d5ff"></span>
+                                    <span class="color-chip" style="background:#faf5ff"></span>
+                                </div>
+                                <span class="preset-name">🍇 Plum Elegance</span>
+                                <span class="preset-badge elegant">Elegant</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="champagne" data-category="elegant">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#78350f"></span>
+                                    <span class="color-chip" style="background:#fde68a"></span>
+                                    <span class="color-chip" style="background:#fffbeb"></span>
+                                </div>
+                                <span class="preset-name">🥂 Champagne</span>
+                                <span class="preset-badge elegant">Elegant</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="charcoal" data-category="elegant">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#1f2937"></span>
+                                    <span class="color-chip" style="background:#94a3b8"></span>
+                                    <span class="color-chip" style="background:#f1f5f9"></span>
+                                </div>
+                                <span class="preset-name">🖤 Charcoal</span>
+                                <span class="preset-badge elegant">Elegant</span>
+                            </div>
+
+                            <div class="preset-card" data-preset="rosegold" data-category="elegant">
+                                <div class="preset-colors">
+                                    <span class="color-chip" style="background:#831843"></span>
+                                    <span class="color-chip" style="background:#fbcfe8"></span>
+                                    <span class="color-chip" style="background:#fff5f6"></span>
+                                </div>
+                                <span class="preset-name">💎 Rose Gold</span>
+                                <span class="preset-badge elegant">Elegant</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    {{-- COLOR PICKERS dengan Preview Swatch Besar --}}
+                    <div class="color-pickers-grid">
+
+                        {{-- PRIMARY GROUP --}}
+                        <div class="color-group">
+                            <div class="color-group-header">
+                                <span class="color-icon">🎨</span>
+                                <label class="color-group-label">Warna Utama (Primary)</label>
+                            </div>
+                            <div class="color-input-wrapper">
+                                <div class="color-swatch-large" id="swatchPrimary" style="background-color: {{ old('primary_color', $settings->primary_color ?? '#0B4650') }}"></div>
+                                <div class="color-input-area">
+                                    <input type="color"
+                                        id="primary_color"
+                                        name="primary_color"
+                                        class="form-input color-picker"
+                                        value="{{ old('primary_color', $settings->primary_color ?? '#0B4650') }}"
+                                        oninput="updateColorPreview('primary_color', this.value)">
+                                    <span class="color-hex" id="hexPrimary">{{ old('primary_color', $settings->primary_color ?? '#0B4650') }}</span>
+                                </div>
+                            </div>
+                            <div class="color-variants">
+                                <div class="variant-item">
+                                    <label>Primary Light</label>
+                                    <input type="color" id="primary_light" name="primary_light"
+                                        class="form-input variant-picker"
+                                        value="{{ old('primary_light', $settings->primary_light ?? '#155e6e') }}"
+                                        oninput="updateColorPreview('primary_light', this.value)">
+                                </div>
+                                <div class="variant-item">
+                                    <label>Primary Dark</label>
+                                    <input type="color" id="primary_dark" name="primary_dark"
+                                        class="form-input variant-picker"
+                                        value="{{ old('primary_dark', $settings->primary_dark ?? '#072e38') }}"
+                                        oninput="updateColorPreview('primary_dark', this.value)">
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- GOLD/ACCENT GROUP --}}
+                        <div class="color-group">
+                            <div class="color-group-header">
+                                <span class="color-icon">🌟</span>
+                                <label class="color-group-label">Warna Aksen (Accent)</label>
+                            </div>
+                            <div class="color-input-wrapper">
+                                <div class="color-swatch-large" id="swatchGold" style="background-color: {{ old('gold_color', $settings->gold_color ?? '#E6FF2B') }}"></div>
+                                <div class="color-input-area">
+                                    <input type="color"
+                                        id="gold_color"
+                                        name="gold_color"
+                                        class="form-input color-picker"
+                                        value="{{ old('gold_color', $settings->gold_color ?? '#E6FF2B') }}"
+                                        oninput="updateColorPreview('gold_color', this.value)">
+                                    <span class="color-hex" id="hexGold">{{ old('gold_color', $settings->gold_color ?? '#E6FF2B') }}</span>
+                                </div>
+                            </div>
+                            <div class="color-variants">
+                                <div class="variant-item">
+                                    <label>Gold Light</label>
+                                    <input type="color" id="gold_light" name="gold_light"
+                                        class="form-input variant-picker"
+                                        value="{{ old('gold_light', $settings->gold_light ?? '#eeff55') }}"
+                                        oninput="updateColorPreview('gold_light', this.value)">
+                                </div>
+                                <div class="variant-item">
+                                    <label>Gold Dark</label>
+                                    <input type="color" id="gold_dark" name="gold_dark"
+                                        class="form-input variant-picker"
+                                        value="{{ old('gold_dark', $settings->gold_dark ?? '#c4db00') }}"
+                                        oninput="updateColorPreview('gold_dark', this.value)">
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- BACKGROUND GROUP --}}
+                        <div class="color-group">
+                            <div class="color-group-header">
+                                <span class="color-icon">🖼️</span>
+                                <label class="color-group-label">Warna Latar (Background)</label>
+                            </div>
+                            <div class="compact-colors">
+                                <div class="compact-item">
+                                    <label>Secondary</label>
+                                    <input type="color" id="secondary_color" name="secondary_color"
+                                        class="form-input compact-picker"
+                                        value="{{ old('secondary_color', $settings->secondary_color ?? '#F9F7F2') }}"
+                                        oninput="updateColorPreview('secondary_color', this.value)">
+                                </div>
+                                <div class="compact-item">
+                                    <label>Accent 1</label>
+                                    <input type="color" id="accent_color" name="accent_color"
+                                        class="form-input compact-picker"
+                                        value="{{ old('accent_color', $settings->accent_color ?? '#fdfcf9') }}"
+                                        oninput="updateColorPreview('accent_color', this.value)">
+                                </div>
+                                <div class="compact-item">
+                                    <label>Accent 2</label>
+                                    <input type="color" id="accent2_color" name="accent2_color"
+                                        class="form-input compact-picker"
+                                        value="{{ old('accent2_color', $settings->accent2_color ?? '#f0ede5') }}"
+                                        oninput="updateColorPreview('accent2_color', this.value)">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    {{-- TIPS MEMILIH WARNA --}}
+                    <div class="color-tips">
+                        <div class="tip-icon">💡</div>
+                        <div class="tip-text">
+                            <strong>Tips memilih kombinasi warna:</strong> 
+                            Pilih tema berdasarkan kategori yang sesuai dengan identitas website Anda. 
+                            Cool untuk profesional modern, Warm untuk energi positif, Nature untuk kesan alami,
+                            Vibrant untuk tampilan berani, Elegant untuk kesan mewah.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>{{-- end cards-grid --}}
 
         <div class="form-actions">
@@ -308,6 +789,9 @@
 </div>
 
 <style>
+/* Styles sama seperti sebelumnya, hanya menambahkan beberapa penyesuaian untuk grid */
+/* (stylesheet yang sama seperti di atas dengan sedikit modifikasi) */
+
 :root {
     --acc:       #4361ee;
     --acc-light: #eef1fd;
@@ -322,7 +806,7 @@
     --shm:       0 4px 24px rgba(67,97,238,.12);
 }
 .settings-wrapper {
-    max-width: 960px; margin: 0 auto; padding: 0 0 60px;
+    max-width: 1400px; margin: 0 auto; padding: 0 0 60px;
     font-family: 'Segoe UI', system-ui, sans-serif;
 }
 .page-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
@@ -362,7 +846,7 @@
 .badge-amber  { background: #fef3c7; color: #b45309; }
 .card-title { font-size: 15px; font-weight: 700; color: var(--tp); margin: 0 0 2px; }
 .card-desc  { font-size: 12.5px; color: var(--ts); margin: 0; }
-.card-body  { padding: 22px 24px; display: flex; flex-direction: column; gap: 16px; }
+.card-body  { padding: 22px 24px; display: flex; flex-direction: column; gap: 20px; }
 
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .form-group { display: flex; flex-direction: column; gap: 6px; }
@@ -429,13 +913,296 @@
     box-shadow: 0 6px 20px rgba(67,97,238,.38);
 }
 
-@media (max-width: 640px) {
+/* Theme Styles */
+.theme-preview-panel {
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+    border: 1px solid var(--bdr);
+    border-radius: var(--r);
+    padding: 16px 20px;
+    margin-bottom: 8px;
+}
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--bdr);
+}
+.preview-badge {
+    background: var(--acc);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+.preview-hint {
+    font-size: 11px;
+    color: var(--tm);
+}
+.preview-samples {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.sample-group {
+    display: flex;
+    gap: 12px;
+}
+.sample-primary, .sample-gold {
+    padding: 12px 24px;
+    border-radius: var(--rsm);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.sample-primary span, .sample-gold span {
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+.sample-gold span {
+    color: #1f2937;
+    text-shadow: none;
+}
+.sample-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.text-dark {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1f2937;
+}
+.text-light {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+/* PRESET CATEGORIES */
+.preset-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--bdr);
+}
+.category-btn {
+    padding: 6px 14px;
+    background: #f3f4f6;
+    border: 1px solid var(--bdr);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ts);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.category-btn:hover {
+    background: var(--acc-light);
+    border-color: var(--acc);
+    color: var(--acc);
+}
+.category-btn.active {
+    background: var(--acc);
+    border-color: var(--acc);
+    color: white;
+}
+
+/* PRESET GRID */
+.preset-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 14px;
+    margin-top: 8px;
+}
+.preset-card {
+    position: relative;
+    border: 2px solid var(--bdr);
+    border-radius: var(--rsm);
+    padding: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fff;
+}
+.preset-card:hover {
+    border-color: var(--acc);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.preset-colors {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+.color-chip {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+.preset-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--tp);
+    display: block;
+    margin-bottom: 6px;
+}
+.preset-badge {
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: #f3f4f6;
+    color: var(--ts);
+    display: inline-block;
+}
+.preset-badge.cool { background: #dbeafe; color: #1e40af; }
+.preset-badge.warm { background: #ffedd5; color: #9a3412; }
+.preset-badge.nature { background: #dcfce7; color: #166534; }
+.preset-badge.vibrant { background: #fce7f3; color: #be185d; }
+.preset-badge.elegant { background: #f3e8ff; color: #6b21a5; }
+
+/* COLOR PICKERS */
+.color-pickers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 12px;
+}
+.color-group {
+    background: #f9fafc;
+    padding: 18px;
+    border-radius: var(--rsm);
+    border: 1px solid var(--bdr);
+}
+.color-group-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--bdr);
+}
+.color-icon {
+    font-size: 20px;
+}
+.color-group-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--tp);
+}
+.color-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.color-swatch-large {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.color-input-area {
+    flex: 1;
+}
+.color-picker {
+    width: 100%;
+    height: 45px;
+    padding: 4px;
+    cursor: pointer;
+}
+.color-hex {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 11px;
+    font-family: monospace;
+    color: var(--ts);
+    background: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+.color-variants {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--bdr);
+}
+.variant-item label, .compact-item label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ts);
+    display: block;
+    margin-bottom: 6px;
+}
+.variant-picker, .compact-picker {
+    width: 100%;
+    height: 35px;
+    padding: 2px;
+    cursor: pointer;
+}
+.compact-colors {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.compact-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.compact-item label {
+    margin-bottom: 0;
+    min-width: 70px;
+}
+.compact-picker {
+    width: 80px;
+}
+
+.color-tips {
+    background: #fff9e6;
+    border-left: 3px solid #fbbf24;
+    padding: 12px 16px;
+    border-radius: var(--rsm);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-top: 8px;
+}
+.tip-icon {
+    font-size: 18px;
+}
+.tip-text {
+    font-size: 12px;
+    color: #78350f;
+    line-height: 1.5;
+}
+.tip-text strong {
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
     .form-row    { grid-template-columns: 1fr; }
     .social-grid { grid-template-columns: 1fr; }
+    .color-pickers-grid { grid-template-columns: 1fr; }
+    .preset-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+    .sample-group { flex-direction: column; }
+    .preview-samples { flex-direction: column; align-items: stretch; }
+    .preset-categories { justify-content: center; }
 }
 </style>
 
 <script>
+// Image preview
 function previewImage(input, previewId, placeholderId) {
     const preview = document.getElementById(previewId);
     const ph      = document.getElementById(placeholderId);
@@ -449,6 +1216,8 @@ function previewImage(input, previewId, placeholderId) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+
+// Auto close alert
 const alertEl = document.getElementById('successAlert');
 if (alertEl) {
     setTimeout(() => {
@@ -457,5 +1226,266 @@ if (alertEl) {
         setTimeout(() => alertEl.remove(), 400);
     }, 4000);
 }
+
+// ==================== 30 THEME PRESETS WITH CATEGORIES ====================
+const presets = {
+    // Cool Themes (6)
+    ocean: {
+        primary_color: '#0B4650', primary_light: '#155e6e', primary_dark: '#072e38',
+        gold_color: '#E6FF2B', gold_light: '#eeff55', gold_dark: '#c4db00',
+        secondary_color: '#F9F7F2', accent_color: '#fdfcf9', accent2_color: '#f0ede5'
+    },
+    sky: {
+        primary_color: '#0284c7', primary_light: '#38bdf8', primary_dark: '#075985',
+        gold_color: '#fcd34d', gold_light: '#fef08a', gold_dark: '#f59e0b',
+        secondary_color: '#f0f9ff', accent_color: '#e0f2fe', accent2_color: '#bae6fd'
+    },
+    twilight: {
+        primary_color: '#4c1d95', primary_light: '#7c3aed', primary_dark: '#3b0764',
+        gold_color: '#f472b6', gold_light: '#fbcfe8', gold_dark: '#db2777',
+        secondary_color: '#faf5ff', accent_color: '#f3e8ff', accent2_color: '#e9d5ff'
+    },
+    ice: {
+        primary_color: '#0f172a', primary_light: '#38bdf8', primary_dark: '#020617',
+        gold_color: '#38bdf8', gold_light: '#7dd3fc', gold_dark: '#0284c7',
+        secondary_color: '#f8fafc', accent_color: '#f1f5f9', accent2_color: '#e2e8f0'
+    },
+    mint: {
+        primary_color: '#134e4a', primary_light: '#2dd4bf', primary_dark: '#042f2e',
+        gold_color: '#2dd4bf', gold_light: '#5eead4', gold_dark: '#14b8a6',
+        secondary_color: '#f0fdfa', accent_color: '#ccfbf1', accent2_color: '#99f6e4'
+    },
+    navy: {
+        primary_color: '#1e3a8a', primary_light: '#6366f1', primary_dark: '#172554',
+        gold_color: '#818cf8', gold_light: '#a5b4fc', gold_dark: '#4f46e5',
+        secondary_color: '#eef2ff', accent_color: '#e0e7ff', accent2_color: '#c7d2fe'
+    },
+    
+    // Warm Themes (6)
+    sunset: {
+        primary_color: '#be123c', primary_light: '#e11d48', primary_dark: '#881337',
+        gold_color: '#fbbf24', gold_light: '#fcd34d', gold_dark: '#d97706',
+        secondary_color: '#fff7ed', accent_color: '#ffedd5', accent2_color: '#fed7aa'
+    },
+    coral: {
+        primary_color: '#e11d48', primary_light: '#fb7185', primary_dark: '#9f1239',
+        gold_color: '#f97316', gold_light: '#fdba74', gold_dark: '#ea580c',
+        secondary_color: '#fff1f2', accent_color: '#ffe4e6', accent2_color: '#fecdd3'
+    },
+    amber: {
+        primary_color: '#b45309', primary_light: '#d97706', primary_dark: '#78350f',
+        gold_color: '#fde047', gold_light: '#fef08a', gold_dark: '#ca8a04',
+        secondary_color: '#fffbeb', accent_color: '#fef3c7', accent2_color: '#fde68a'
+    },
+    peach: {
+        primary_color: '#fb923c', primary_light: '#fdba74', primary_dark: '#c2410c',
+        gold_color: '#fed7aa', gold_light: '#fef3c7', gold_dark: '#fdba74',
+        secondary_color: '#fff7ed', accent_color: '#ffedd5', accent2_color: '#fed7aa'
+    },
+    terracotta: {
+        primary_color: '#9a3412', primary_light: '#c2410c', primary_dark: '#431407',
+        gold_color: '#fdba74', gold_light: '#fed7aa', gold_dark: '#fb923c',
+        secondary_color: '#fff7ed', accent_color: '#ffedd5', accent2_color: '#fed7aa'
+    },
+    maroon: {
+        primary_color: '#7f1d1d', primary_light: '#991b1b', primary_dark: '#450a0a',
+        gold_color: '#ef4444', gold_light: '#fca5a5', gold_dark: '#dc2626',
+        secondary_color: '#fef2f2', accent_color: '#fee2e2', accent2_color: '#fecaca'
+    },
+    
+    // Nature Themes (6)
+    campus: {
+        primary_color: '#166534', primary_light: '#22c55e', primary_dark: '#14532d',
+        gold_color: '#fde047', gold_light: '#fef08a', gold_dark: '#eab308',
+        secondary_color: '#f0fdf4', accent_color: '#dcfce7', accent2_color: '#bbf7d0'
+    },
+    forest: {
+        primary_color: '#064e3b', primary_light: '#10b981', primary_dark: '#022c22',
+        gold_color: '#a7f3d0', gold_light: '#6ee7b7', gold_dark: '#34d399',
+        secondary_color: '#ecfdf5', accent_color: '#d1fae5', accent2_color: '#a7f3d0'
+    },
+    olive: {
+        primary_color: '#3f6212', primary_light: '#65a30d', primary_dark: '#1a2e05',
+        gold_color: '#fef08a', gold_light: '#fde047', gold_dark: '#eab308',
+        secondary_color: '#fefce8', accent_color: '#fef08a', accent2_color: '#fde047'
+    },
+    sage: {
+        primary_color: '#4b5563', primary_light: '#9ca3af', primary_dark: '#374151',
+        gold_color: '#9ca3af', gold_light: '#d1d5db', gold_dark: '#6b7280',
+        secondary_color: '#f9fafb', accent_color: '#f3f4f6', accent2_color: '#e5e7eb'
+    },
+    lime: {
+        primary_color: '#4d7c0f', primary_light: '#84cc16', primary_dark: '#3f6212',
+        gold_color: '#a3e635', gold_light: '#bef264', gold_dark: '#65a30d',
+        secondary_color: '#f7fee7', accent_color: '#ecfccb', accent2_color: '#d9f99d'
+    },
+    moss: {
+        primary_color: '#2d5a27', primary_light: '#65a30d', primary_dark: '#1a3a15',
+        gold_color: '#c4e6b0', gold_light: '#d9f99d', gold_dark: '#84cc16',
+        secondary_color: '#f4f9f2', accent_color: '#eaf7e5', accent2_color: '#d4f0c9'
+    },
+    
+    // Vibrant Themes (6)
+    royal: {
+        primary_color: '#1e3a8a', primary_light: '#2563eb', primary_dark: '#172554',
+        gold_color: '#facc15', gold_light: '#fde047', gold_dark: '#eab308',
+        secondary_color: '#eff6ff', accent_color: '#dbeafe', accent2_color: '#bfdbfe'
+    },
+    electric: {
+        primary_color: '#0891b2', primary_light: '#06b6d4', primary_dark: '#164e63',
+        gold_color: '#2dd4bf', gold_light: '#5eead4', gold_dark: '#14b8a6',
+        secondary_color: '#ecfeff', accent_color: '#cffafe', accent2_color: '#a5f3fc'
+    },
+    sunshine: {
+        primary_color: '#f59e0b', primary_light: '#fbbf24', primary_dark: '#b45309',
+        gold_color: '#ef4444', gold_light: '#f87171', gold_dark: '#dc2626',
+        secondary_color: '#fffbeb', accent_color: '#fef3c7', accent2_color: '#fde68a'
+    },
+    magenta: {
+        primary_color: '#be185d', primary_light: '#ec4899', primary_dark: '#831843',
+        gold_color: '#f472b6', gold_light: '#fbcfe8', gold_dark: '#db2777',
+        secondary_color: '#fff5f6', accent_color: '#fce7f3', accent2_color: '#fbcfe8'
+    },
+    neon: {
+        primary_color: '#111827', primary_light: '#10b981', primary_dark: '#030712',
+        gold_color: '#10b981', gold_light: '#34d399', gold_dark: '#059669',
+        secondary_color: '#ecfdf5', accent_color: '#d1fae5', accent2_color: '#a7f3d0'
+    },
+    crimson: {
+        primary_color: '#dc2626', primary_light: '#ef4444', primary_dark: '#991b1b',
+        gold_color: '#fca5a5', gold_light: '#fecaca', gold_dark: '#f87171',
+        secondary_color: '#fef2f2', accent_color: '#fee2e2', accent2_color: '#fecaca'
+    },
+    
+    // Elegant Themes (6)
+    luxury: {
+        primary_color: '#1f2937', primary_light: '#374151', primary_dark: '#111827',
+        gold_color: '#d4af37', gold_light: '#fbbf24', gold_dark: '#b45309',
+        secondary_color: '#fef3c7', accent_color: '#fffbeb', accent2_color: '#fde68a'
+    },
+    minimal: {
+        primary_color: '#3f3f46', primary_light: '#71717a', primary_dark: '#18181b',
+        gold_color: '#d4d4d8', gold_light: '#e4e4e7', gold_dark: '#a1a1aa',
+        secondary_color: '#fafafa', accent_color: '#f4f4f5', accent2_color: '#e4e4e7'
+    },
+    plum: {
+        primary_color: '#6b21a5', primary_light: '#9333ea', primary_dark: '#4c1d95',
+        gold_color: '#e9d5ff', gold_light: '#d8b4fe', gold_dark: '#c084fc',
+        secondary_color: '#faf5ff', accent_color: '#f3e8ff', accent2_color: '#e9d5ff'
+    },
+    champagne: {
+        primary_color: '#78350f', primary_light: '#b45309', primary_dark: '#451a03',
+        gold_color: '#fde68a', gold_light: '#fef3c7', gold_dark: '#fcd34d',
+        secondary_color: '#fffbeb', accent_color: '#fef3c7', accent2_color: '#fde68a'
+    },
+    charcoal: {
+        primary_color: '#1f2937', primary_light: '#475569', primary_dark: '#0f172a',
+        gold_color: '#94a3b8', gold_light: '#cbd5e1', gold_dark: '#64748b',
+        secondary_color: '#f1f5f9', accent_color: '#e2e8f0', accent2_color: '#cbd5e1'
+    },
+    rosegold: {
+        primary_color: '#831843', primary_light: '#be185d', primary_dark: '#4c0519',
+        gold_color: '#fbcfe8', gold_light: '#fce7f3', gold_dark: '#f472b6',
+        secondary_color: '#fff5f6', accent_color: '#fce7f3', accent2_color: '#fbcfe8'
+    }
+};
+
+// Update all color previews
+function updateAllPreviews() {
+    const primaryColor = document.getElementById('primary_color').value;
+    const goldColor = document.getElementById('gold_color').value;
+    
+    document.getElementById('swatchPrimary').style.backgroundColor = primaryColor;
+    document.getElementById('swatchGold').style.backgroundColor = goldColor;
+    document.getElementById('hexPrimary').textContent = primaryColor;
+    document.getElementById('hexGold').textContent = goldColor;
+    document.getElementById('previewPrimary').style.backgroundColor = primaryColor;
+    document.getElementById('previewGold').style.backgroundColor = goldColor;
+}
+
+function updateColorPreview(colorId, value) {
+    if (colorId === 'primary_color') {
+        document.getElementById('swatchPrimary').style.backgroundColor = value;
+        document.getElementById('hexPrimary').textContent = value;
+        document.getElementById('previewPrimary').style.backgroundColor = value;
+    } else if (colorId === 'gold_color') {
+        document.getElementById('swatchGold').style.backgroundColor = value;
+        document.getElementById('hexGold').textContent = value;
+        document.getElementById('previewGold').style.backgroundColor = value;
+    }
+    updateAllPreviews();
+}
+
+function applyPreset(presetName) {
+    const selected = presets[presetName];
+    if (!selected) return;
+
+    Object.keys(selected).forEach(key => {
+        const input = document.getElementById(key);
+        if (input) {
+            input.value = selected[key];
+            const event = new Event('input', { bubbles: true });
+            input.dispatchEvent(event);
+        }
+    });
+    
+    updateAllPreviews();
+    
+    const presetCard = document.querySelector(`.preset-card[data-preset="${presetName}"]`);
+    if (presetCard) {
+        presetCard.style.transform = 'scale(0.98)';
+        setTimeout(() => {
+            presetCard.style.transform = '';
+        }, 200);
+    }
+}
+
+function filterPresets(category) {
+    const presetCards = document.querySelectorAll('.preset-card');
+    let count = 0;
+    
+    presetCards.forEach(card => {
+        const cardCategory = card.dataset.category;
+        if (category === 'all' || cardCategory === category) {
+            card.style.display = '';
+            count++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.category === category) {
+            btn.classList.add('active');
+        }
+    });
+}
+
+// Event Listeners
+document.querySelectorAll('.preset-card').forEach(card => {
+    card.addEventListener('click', function() {
+        const preset = this.dataset.preset;
+        applyPreset(preset);
+    });
+});
+
+document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const category = this.dataset.category;
+        filterPresets(category);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateAllPreviews();
+    
+    const colorInputs = document.querySelectorAll('input[type="color"]');
+    colorInputs.forEach(input => {
+        input.addEventListener('input', function() {
+            updateAllPreviews();
+        });
+    });
+});
 </script>
 @endsection

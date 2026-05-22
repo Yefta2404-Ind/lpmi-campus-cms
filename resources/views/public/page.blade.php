@@ -536,7 +536,7 @@ button:focus-visible {
 @endsection
 
 @section('content')
-<div class="page-hero" style="background-image: url('{{ asset('images/hero.jpg') }}')">
+<div class="page-hero" style="background-image: url('{{ asset('images/21.jpg') }}')">
     <div class="site-container">
         <div class="page-hero-content">
             {{-- Breadcrumb --}}

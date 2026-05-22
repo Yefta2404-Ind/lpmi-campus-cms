@@ -2,27 +2,37 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\SiteSetting;
+use Illuminate\Support\Facades\DB;
 
 class SiteSettingSeeder extends Seeder
 {
-public function run()
-{
-    SiteSetting::updateOrCreate(
-        ['id' => 1],
-        [
-            'site_name' => 'LPPMI',
-            'site_subtitle' => 'Default Subtitle',
-            'phone' => null,
-            'email' => null,
-            'address' => null,
-            'facebook' => null,
-            'twitter' => null,
-            'instagram' => null,
-            'youtube' => null,
-        ]
-    );
-}
+    public function run(): void
+    {
+        DB::table('site_settings')->insert([
+            'site_name' => 'LPM Universitas',
+            'site_subtitle' => 'Lembaga Penjaminan Mutu',
+            'logo' => 'logos/logo.png',
+
+            'phone' => '08123456789',
+            'email' => 'admin@kampus.ac.id',
+            'address' => 'Jl. Contoh Alamat Kampus',
+
+            'facebook' => 'https://facebook.com/lpm',
+            'twitter' => 'https://twitter.com/lpm',
+            'instagram' => 'https://instagram.com/lpm',
+            'youtube' => 'https://youtube.com/@lpm',
+
+            'footer_description' =>
+                'Website resmi Lembaga Penjaminan Mutu Universitas.',
+
+            'footer_address' => 'Jl. Contoh Footer Address',
+            'footer_phone' => '08123456789',
+            'footer_email' => 'footer@kampus.ac.id',
+            'footer_website' => 'https://kampus.ac.id',
+
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+    }
 }

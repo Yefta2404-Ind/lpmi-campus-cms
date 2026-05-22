@@ -46,12 +46,12 @@
 body { font-family: 'DM Sans', sans-serif; background: var(--surface-2); color: var(--ink-2); }
 
 /* ── MAIN CONTAINER ── */
-.edit-menu-page {
+.menu-dashboard {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px 16px 48px;
 }
-@media (min-width: 640px) { .edit-menu-page { padding: 32px 24px 64px; } }
+@media (min-width: 640px) { .menu-dashboard { padding: 32px 24px 64px; } }
 
 /* ── BREADCRUMB ── */
 .sc-crumb {
@@ -66,31 +66,54 @@ body { font-family: 'DM Sans', sans-serif; background: var(--surface-2); color: 
 .sc-crumb a:hover { text-decoration: underline; }
 .sc-crumb i { font-size: 0.6rem; opacity: 0.6; }
 
-/* ── HEADER ── */
-.page-header {
+/* ── HEADER SECTION ── */
+.dashboard-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
     flex-wrap: wrap;
+    gap: 20px;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--r-xl);
+    padding: 20px 24px;
+}
+@media (min-width: 640px) {
+    .dashboard-header { padding: 24px 32px; border-radius: var(--r-2xl); margin-bottom: 28px; }
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
     gap: 16px;
 }
-@media (min-width: 640px) { .page-header { margin-bottom: 28px; } }
+@media (min-width: 640px) { .header-left { gap: 20px; } }
 
-.header-left h1 {
+.header-icon {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-2));
+    border-radius: var(--r-lg);
+    display: flex; align-items: center; justify-content: center;
+    color: white;
+    box-shadow: 0 4px 14px rgba(37,99,235,0.35);
+}
+@media (min-width: 640px) { .header-icon { width: 56px; height: 56px; } }
+
+.dashboard-title {
     font-family: 'Sora', sans-serif;
     font-size: 1.25rem; font-weight: 800;
     color: var(--ink); letter-spacing: -0.02em;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
-@media (min-width: 640px) { .header-left h1 { font-size: 1.5rem; margin-bottom: 8px; } }
+@media (min-width: 640px) { .dashboard-title { font-size: 1.5rem; } }
 
-.header-left p {
+.dashboard-subtitle {
     font-size: 0.8rem; color: var(--ink-3);
 }
-@media (min-width: 640px) { .header-left p { font-size: 0.85rem; } }
+@media (min-width: 640px) { .dashboard-subtitle { font-size: 0.85rem; } }
 
-.btn-back {
+.btn-outline-custom {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -103,51 +126,139 @@ body { font-family: 'DM Sans', sans-serif; background: var(--surface-2); color: 
     text-decoration: none;
     transition: all 0.2s;
 }
-@media (min-width: 640px) { .btn-back { padding: 10px 20px; font-size: 0.875rem; } }
-.btn-back:hover {
+@media (min-width: 640px) { .btn-outline-custom { padding: 10px 20px; font-size: 0.875rem; } }
+.btn-outline-custom:hover {
     background: var(--surface-3);
     border-color: var(--ink-4);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
-/* ── FORM CARD ── */
-.form-card {
+/* ── ALERT ── */
+.alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: var(--r-md);
+    margin-bottom: 24px;
+    animation: slideDown 0.3s ease-out;
+}
+@media (min-width: 640px) { .alert { padding: 16px 20px; margin-bottom: 28px; } }
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.alert-error {
+    background: var(--red-bg);
+    border-left: 4px solid var(--red);
+}
+.alert-error svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--red);
+}
+.alert-close {
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--red);
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    line-height: 1;
+}
+.alert-close:hover { opacity: 1; }
+
+/* ── MAIN CARD ── */
+.main-card {
     background: var(--surface);
     border: 1.5px solid var(--border);
     border-radius: var(--r-xl);
     overflow: hidden;
-    animation: fadeIn 0.4s ease;
-}
-@media (min-width: 640px) { .form-card { border-radius: var(--r-2xl); } }
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.card-body {
-    padding: 20px;
-}
-@media (min-width: 640px) { .card-body { padding: 32px; } }
-
-/* ── FORM ELEMENTS ── */
-.form-group {
     margin-bottom: 24px;
 }
-@media (min-width: 640px) { .form-group { margin-bottom: 28px; } }
+@media (min-width: 640px) { .main-card { border-radius: var(--r-2xl); margin-bottom: 28px; } }
 
-.form-label {
+.card-header-custom {
+    padding: 16px 20px;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+@media (min-width: 640px) { .card-header-custom { padding: 20px 24px; } }
+
+.header-left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+@media (min-width: 640px) { .header-left-section { gap: 12px; } }
+
+.section-icon {
+    width: 36px; height: 36px;
+    background: var(--blue-bg);
+    border-radius: var(--r-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+}
+@media (min-width: 640px) { .section-icon { width: 40px; height: 40px; } }
+
+.header-left-section h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.9rem; font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 2px 0;
+}
+@media (min-width: 640px) { .header-left-section h3 { font-size: 1rem; margin-bottom: 4px; } }
+.header-left-section p {
+    font-size: 0.7rem; color: var(--ink-4);
+    margin: 0;
+}
+@media (min-width: 640px) { .header-left-section p { font-size: 0.75rem; } }
+
+.info-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: var(--surface);
+    border: 1px solid var(--border-md);
+    border-radius: 99px;
+    font-size: 0.7rem;
+    color: var(--ink-3);
+}
+@media (min-width: 640px) {
+    .info-badge { gap: 8px; padding: 8px 16px; font-size: 0.75rem; }
+}
+
+/* Card Body */
+.card-body-custom {
+    padding: 20px;
+}
+@media (min-width: 640px) { .card-body-custom { padding: 32px; } }
+
+/* Form Elements */
+.form-group-custom {
+    margin-bottom: 24px;
+}
+@media (min-width: 640px) { .form-group-custom { margin-bottom: 28px; } }
+
+.form-label-custom {
     display: block;
-    margin-bottom: 8px;
     font-size: 0.8rem; font-weight: 600;
     color: var(--ink-2);
+    margin-bottom: 8px;
 }
-@media (min-width: 640px) { .form-label { font-size: 0.84rem; margin-bottom: 10px; } }
-.required {
-    color: var(--red);
-    margin-left: 4px;
-}
+@media (min-width: 640px) { .form-label-custom { font-size: 0.84rem; margin-bottom: 10px; } }
 
-.form-control, .form-select {
+.form-control-custom, .form-select-custom {
     width: 100%;
     padding: 10px 12px;
     border: 1.5px solid var(--border-md);
@@ -158,17 +269,38 @@ body { font-family: 'DM Sans', sans-serif; background: var(--surface-2); color: 
     background: var(--surface);
 }
 @media (min-width: 640px) {
-    .form-control, .form-select { padding: 11px 15px; font-size: 0.9rem; }
+    .form-control-custom, .form-select-custom { padding: 11px 15px; font-size: 0.9rem; }
 }
-.form-control:focus, .form-select:focus {
+.form-control-custom:focus, .form-select-custom:focus {
     outline: none;
     border-color: var(--blue);
     box-shadow: 0 0 0 3px var(--blue-ring);
 }
-.form-control.error, .form-select.error {
+.form-control-custom.is-invalid, .form-select-custom.is-invalid {
     border-color: var(--red);
     background: var(--red-bg);
 }
+.invalid-feedback {
+    font-size: 0.7rem;
+    color: var(--red);
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+@media (min-width: 640px) { .invalid-feedback { font-size: 0.75rem; margin-top: 8px; } }
+.form-text {
+    font-size: 0.7rem;
+    color: var(--ink-4);
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+@media (min-width: 640px) { .form-text { font-size: 0.75rem; margin-top: 8px; } }
+.form-text i { font-size: 0.65rem; color: var(--blue); }
+
+.text-danger { color: var(--red); }
 
 /* Radio Group */
 .radio-group {
@@ -176,61 +308,51 @@ body { font-family: 'DM Sans', sans-serif; background: var(--surface-2); color: 
     gap: 20px;
     flex-wrap: wrap;
 }
-.radio-item {
+@media (min-width: 640px) { .radio-group { gap: 24px; } }
+.radio-label {
     display: flex;
     align-items: center;
     gap: 8px;
     cursor: pointer;
+    font-size: 0.8rem;
+    color: var(--ink-2);
 }
-.radio-item input[type="radio"] {
+@media (min-width: 640px) { .radio-label { font-size: 0.85rem; gap: 10px; } }
+.radio-label input {
     width: 16px;
     height: 16px;
     cursor: pointer;
     accent-color: var(--blue);
 }
-.radio-item label {
-    font-size: 0.8rem;
-    color: var(--ink-2);
-    cursor: pointer;
-}
-@media (min-width: 640px) { .radio-item label { font-size: 0.85rem; } }
 
 /* Row Grid */
-.row-grid {
+.row-custom {
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
     margin-bottom: 24px;
 }
-@media (min-width: 640px) { .row-grid { grid-template-columns: 1fr 1fr; gap: 20px; } }
+@media (min-width: 640px) { .row-custom { grid-template-columns: 1fr 1fr; gap: 20px; } }
 
-/* Switch Toggle */
-.switch-wrapper {
-    display: flex;
+/* Toggle Switch */
+.toggle-switch-form {
+    display: inline-flex;
     align-items: center;
     gap: 12px;
-    padding: 8px 0;
+    cursor: pointer;
 }
-.switch {
+.toggle-switch-form input {
+    display: none;
+}
+.toggle-slider-form {
     position: relative;
-    display: inline-block;
     width: 48px;
     height: 24px;
-}
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-.slider {
-    position: absolute;
-    inset: 0;
     background: var(--border-md);
     border-radius: 24px;
-    cursor: pointer;
     transition: background 0.2s;
 }
-.slider::after {
+.toggle-slider-form::after {
     content: '';
     position: absolute;
     left: 3px;
@@ -242,18 +364,18 @@ body { font-family: 'DM Sans', sans-serif; background: var(--surface-2); color: 
     transition: transform 0.2s;
     box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
-.switch input:checked + .slider {
+.toggle-switch-form input:checked + .toggle-slider-form {
     background: var(--green);
 }
-.switch input:checked + .slider::after {
+.toggle-switch-form input:checked + .toggle-slider-form::after {
     transform: translateX(24px);
 }
-.switch-label {
-    font-size: 0.8rem; font-weight: 600;
+.toggle-label {
+    font-size: 0.8rem;
+    font-weight: 500;
     color: var(--ink-2);
-    cursor: pointer;
 }
-@media (min-width: 640px) { .switch-label { font-size: 0.84rem; } }
+@media (min-width: 640px) { .toggle-label { font-size: 0.85rem; } }
 
 /* Form Actions */
 .form-actions {
@@ -270,7 +392,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--surface-2); color: 
     .form-actions { flex-direction: column; }
 }
 
-.btn-primary, .btn-secondary {
+.btn-primary-custom, .btn-secondary-custom {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -278,85 +400,102 @@ body { font-family: 'DM Sans', sans-serif; background: var(--surface-2); color: 
     padding: 10px 20px;
     border-radius: var(--r-lg);
     font-size: 0.8rem; font-weight: 600;
-    cursor: pointer;
     text-decoration: none;
     transition: all 0.2s;
+    cursor: pointer;
     border: 1.5px solid transparent;
 }
 @media (min-width: 640px) {
-    .btn-primary, .btn-secondary { padding: 12px 28px; font-size: 0.875rem; }
+    .btn-primary-custom, .btn-secondary-custom { padding: 12px 28px; font-size: 0.875rem; }
 }
 @media (max-width: 640px) {
-    .btn-primary, .btn-secondary { width: 100%; }
+    .btn-primary-custom, .btn-secondary-custom { width: 100%; }
 }
 
-.btn-primary {
+.btn-primary-custom {
     background: var(--blue);
     color: white;
     border-color: var(--blue);
     box-shadow: 0 2px 8px rgba(37,99,235,0.3);
 }
-.btn-primary:hover {
+.btn-primary-custom:hover {
     background: var(--blue-2);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(37,99,235,0.4);
 }
-.btn-primary:active { transform: translateY(0); }
+.btn-primary-custom:active { transform: translateY(0); }
 
-.btn-secondary {
+.btn-secondary-custom {
     background: var(--surface);
     color: var(--ink-2);
     border-color: var(--border-md);
 }
-.btn-secondary:hover {
+.btn-secondary-custom:hover {
     background: var(--surface-3);
     border-color: var(--ink-4);
 }
 
-/* Info Card */
-.info-card {
+/* Tips Card */
+.tips-card {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    padding: 14px 18px;
-    background: var(--surface);
-    border: 1.5px solid var(--border);
+    padding: 16px 20px;
+    background: var(--blue-bg);
+    border: 1.5px solid rgba(37,99,235,0.2);
     border-radius: var(--r-lg);
-    margin-top: 20px;
 }
 @media (min-width: 640px) {
-    .info-card { gap: 16px; padding: 18px 24px; border-radius: var(--r-xl); margin-top: 24px; }
+    .tips-card { gap: 16px; padding: 20px 24px; border-radius: var(--r-xl); }
 }
-.info-icon {
-    font-size: 1.1rem;
-    flex-shrink: 0;
+.tips-icon {
+    width: 36px; height: 36px;
+    background: rgba(37,99,235,0.15);
+    border-radius: var(--r-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--blue);
+    flex-shrink: 0;
 }
-.info-content {
+@media (min-width: 640px) { .tips-icon { width: 40px; height: 40px; } }
+.tips-content {
     flex: 1;
-    font-size: 0.75rem;
-    color: var(--ink-3);
-    line-height: 1.5;
 }
-@media (min-width: 640px) { .info-content { font-size: 0.8rem; } }
-.info-content strong {
+.tips-content strong {
     display: block;
-    margin-bottom: 6px;
-    color: var(--ink-2);
+    font-size: 0.8rem;
+    color: var(--blue-text);
+    margin-bottom: 8px;
     font-weight: 700;
 }
-.info-content p { margin: 0; }
+@media (min-width: 640px) { .tips-content strong { font-size: 0.85rem; margin-bottom: 10px; } }
+.tips-content ul {
+    margin: 0;
+    padding-left: 20px;
+}
+.tips-content li {
+    font-size: 0.7rem;
+    color: var(--blue-text);
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+@media (min-width: 640px) { .tips-content li { font-size: 0.75rem; margin-bottom: 8px; } }
+.tips-content li:last-child { margin-bottom: 0; }
+
+/* Utility */
+.d-none { display: none; }
 
 /* Touch-friendly */
 @media (max-width: 640px) {
-    .form-control, .form-select, .btn-primary, .btn-secondary {
+    .form-control-custom, .form-select-custom, .btn-primary-custom, .btn-secondary-custom {
         font-size: 16px;
         touch-action: manipulation;
     }
 }
 </style>
 
-<div class="edit-menu-page">
+<div class="menu-dashboard">
     
     {{-- BREADCRUMB --}}
     <div class="sc-crumb">
@@ -368,66 +507,110 @@ body { font-family: 'DM Sans', sans-serif; background: var(--surface-2); color: 
     </div>
 
     {{-- HEADER --}}
-    <div class="page-header">
+    <div class="dashboard-header">
         <div class="header-left">
-            <h1>
-                <i class="fas fa-pen" style="margin-right: 8px; color: var(--blue);"></i>
-                Edit Menu
-            </h1>
-            <p>{{ $menu->title }}</p>
+            <div class="header-icon">
+                <i class="fas fa-pen" style="font-size: 1.25rem;"></i>
+            </div>
+            <div>
+                <h1 class="dashboard-title">Edit Menu</h1>
+                <p class="dashboard-subtitle">{{ $menu->title }}</p>
+            </div>
         </div>
-        <a href="{{ route('admin.menus.index') }}" class="btn-back">
+        <a href="{{ route('admin.menus.index') }}" class="btn-outline-custom">
             <i class="fas fa-arrow-left"></i> Kembali
         </a>
     </div>
 
-    {{-- FORM CARD --}}
-    <div class="form-card">
-        <div class="card-body">
+    {{-- ALERT NOTIFICATIONS --}}
+    @if($errors->any())
+    <div class="alert alert-error" id="errorAlert">
+        <i class="fas fa-exclamation-circle" style="font-size: 1rem;"></i>
+        <div>
+            <strong style="display: block; margin-bottom: 6px;">Terjadi kesalahan</strong>
+            <ul style="margin: 0; padding-left: 20px; font-size: 0.75rem;">
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        <button class="alert-close" onclick="this.parentElement.remove()">×</button>
+    </div>
+    @endif
+
+    {{-- MAIN CARD --}}
+    <div class="main-card">
+        <div class="card-header-custom">
+            <div class="header-left-section">
+                <div class="section-icon">
+                    <i class="fas fa-pen"></i>
+                </div>
+                <div>
+                    <h3>Form Edit Menu</h3>
+                    <p>Perbarui informasi menu navigasi</p>
+                </div>
+            </div>
+            <div class="header-right-section">
+                <span class="info-badge">
+                    <i class="fas fa-info-circle"></i>
+                    Edit Menu
+                </span>
+            </div>
+        </div>
+
+        <div class="card-body-custom">
             <form action="{{ route('admin.menus.update', $menu) }}" method="POST" id="menuForm">
                 @csrf 
                 @method('PUT')
 
                 {{-- Judul Menu --}}
-                <div class="form-group">
-                    <label class="form-label">
-                        Judul Menu <span class="required">*</span>
+                <div class="form-group-custom">
+                    <label class="form-label-custom">
+                        Judul Menu <span class="text-danger">*</span>
                     </label>
                     <input type="text" 
                            name="title" 
-                           class="form-control @error('title') error @enderror"
+                           class="form-control-custom @error('title') is-invalid @enderror"
                            value="{{ old('title', $menu->title) }}" 
                            placeholder="Masukkan judul menu"
                            required 
                            autofocus>
                     @error('title')
-                        <p class="error-message" style="margin-top: 6px; font-size: 0.7rem; color: var(--red);">
-                            <i class="fas fa-exclamation-circle"></i> {{ $message }}
-                        </p>
+                        <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> {{ $message }}</div>
                     @enderror
+                    <div class="form-text">
+                        <i class="fas fa-info-circle"></i>
+                        Nama menu yang akan ditampilkan di navigasi website
+                    </div>
                 </div>
 
                 {{-- Tipe Link --}}
-                <div class="form-group">
-                    <label class="form-label">Tipe Link</label>
+                <div class="form-group-custom">
+                    <label class="form-label-custom">Tipe Link</label>
                     <div class="radio-group">
-                        <label class="radio-item">
-                            <input type="radio" name="link_type" value="page" 
-                                   {{ $menu->page_id ? 'checked' : '' }} onchange="toggleLinkType()">
-                            <span>Halaman</span>
+                        <label class="radio-label">
+                            <input type="radio" 
+                                   name="link_type" 
+                                   value="page" 
+                                   {{ $menu->page_id ? 'checked' : '' }} 
+                                   onchange="toggleLinkType()">
+                            <span>Halaman (Page)</span>
                         </label>
-                        <label class="radio-item">
-                            <input type="radio" name="link_type" value="url" 
-                                   {{ $menu->url ? 'checked' : '' }} onchange="toggleLinkType()">
+                        <label class="radio-label">
+                            <input type="radio" 
+                                   name="link_type" 
+                                   value="url" 
+                                   {{ $menu->url ? 'checked' : '' }} 
+                                   onchange="toggleLinkType()">
                             <span>URL Custom</span>
                         </label>
                     </div>
                 </div>
 
                 {{-- Pilih Halaman --}}
-                <div id="pageSelect" class="form-group">
-                    <label class="form-label">Pilih Halaman</label>
-                    <select name="page_id" class="form-select">
+                <div id="pageSelect" class="form-group-custom {{ $menu->url ? 'd-none' : '' }}">
+                    <label class="form-label-custom">Pilih Halaman</label>
+                    <select name="page_id" class="form-select-custom @error('page_id') is-invalid @enderror" {{ $menu->url ? 'disabled' : '' }}>
                         <option value="">-- Pilih Halaman --</option>
                         @foreach(\App\Models\Page::where('status','published')->get() as $page)
                             <option value="{{ $page->id }}"
@@ -436,79 +619,96 @@ body { font-family: 'DM Sans', sans-serif; background: var(--surface-2); color: 
                             </option>
                         @endforeach
                     </select>
-                    <div class="field-hint" style="margin-top: 6px; font-size: 0.7rem; color: var(--ink-4);">
-                        <i class="fas fa-info-circle"></i> Halaman yang sudah dipublikasikan akan muncul di sini
+                    @error('page_id')
+                        <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> {{ $message }}</div>
+                    @enderror
+                    <div class="form-text">
+                        <i class="fas fa-file-alt"></i>
+                        Pilih halaman yang sudah dipublikasikan
                     </div>
                 </div>
 
                 {{-- URL Custom --}}
-                <div id="urlInput" class="form-group d-none">
-                    <label class="form-label">URL Custom</label>
+                <div id="urlInput" class="form-group-custom {{ $menu->url ? '' : 'd-none' }}">
+                    <label class="form-label-custom">URL Custom</label>
                     <input type="text" 
                            name="url" 
-                           class="form-control @error('url') error @enderror"
+                           class="form-control-custom @error('url') is-invalid @enderror"
                            value="{{ old('url', $menu->url) }}" 
-                           placeholder="https://example.com/halaman">
+                           placeholder="https://example.com/halaman"
+                           {{ $menu->url ? '' : 'disabled' }}>
                     @error('url')
-                        <p class="error-message" style="margin-top: 6px; font-size: 0.7rem; color: var(--red);">
-                            <i class="fas fa-exclamation-circle"></i> {{ $message }}
-                        </p>
+                        <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> {{ $message }}</div>
                     @enderror
-                    <div class="field-hint" style="margin-top: 6px; font-size: 0.7rem; color: var(--ink-4);">
-                        <i class="fas fa-link"></i> Masukkan URL lengkap (termasuk https://)
+                    <div class="form-text">
+                        <i class="fas fa-link"></i>
+                        Masukkan URL lengkap (https://) atau path internal (/kontak)
                     </div>
                 </div>
 
                 {{-- Parent Menu --}}
-                <div class="form-group">
-                    <label class="form-label">Parent Menu</label>
-                    <select name="parent_id" class="form-select">
-                        <option value="">— Menu Utama —</option>
-                        @foreach($parents as $parent)
-                            @if($parent->id != $menu->id)
-                                <option value="{{ $parent->id }}"
-                                    {{ $menu->parent_id == $parent->id ? 'selected' : '' }}>
-                                    {{ $parent->title }}
-                                </option>
-                            @endif
-                        @endforeach
-                    </select>
-                    <div class="field-hint" style="margin-top: 6px; font-size: 0.7rem; color: var(--ink-4);">
-                        <i class="fas fa-folder"></i> Pilih menu induk jika ingin membuat sub-menu
-                    </div>
-                </div>
+<div class="form-group-custom">
+    <label class="form-label-custom">Parent Menu</label>
+    <select name="parent_id" class="form-select-custom @error('parent_id') is-invalid @enderror">
+        <option value="">— Menu Utama (Tanpa Parent) —</option>
 
-                {{-- Urutan & Status --}}
-                <div class="row-grid">
-                    <div class="form-group" style="margin-bottom: 0;">
-                        <label class="form-label">Urutan</label>
+        @include('admin.menus.partials.options', [
+            'menus' => $parents,
+            'level' => 0,
+            'selected' => old('parent_id', $menu->parent_id),
+            'exclude_id' => $menu->id
+        ])
+    </select>
+
+    @error('parent_id')
+        <div class="invalid-feedback">
+            <i class="fas fa-exclamation-circle"></i> {{ $message }}
+        </div>
+    @enderror
+
+    <div class="form-text">
+        <i class="fas fa-folder"></i>
+        Kosongkan untuk menu utama, pilih parent untuk sub-menu
+    </div>
+</div>
+
+                {{-- Urutan dan Status --}}
+                <div class="row-custom">
+                    <div class="form-group-custom" style="margin-bottom: 0;">
+                        <label class="form-label-custom">Urutan</label>
                         <input type="number" 
                                name="order" 
-                               class="form-control"
+                               class="form-control-custom @error('order') is-invalid @enderror"
                                value="{{ old('order', $menu->order) }}" 
-                               min="0"
-                               placeholder="0">
-                        <div class="field-hint" style="margin-top: 6px; font-size: 0.7rem; color: var(--ink-4);">
-                            <i class="fas fa-sort"></i> Semakin kecil angka, semakin atas posisinya
+                               min="0">
+                        @error('order')
+                            <div class="invalid-feedback"><i class="fas fa-exclamation-circle"></i> {{ $message }}</div>
+                        @enderror
+                        <div class="form-text">
+                            <i class="fas fa-sort"></i>
+                            Semakin kecil angka, semakin atas posisinya
                         </div>
                     </div>
-                    <div class="form-group" style="margin-bottom: 0; display: flex; align-items: flex-end;">
-                        <div class="switch-wrapper">
-                            <label class="switch">
-                                <input type="checkbox" name="is_active" id="isActive" {{ $menu->is_active ? 'checked' : '' }}>
-                                <span class="slider"></span>
-                            </label>
-                            <label class="switch-label" for="isActive">Status Aktif</label>
+                    <div class="form-group-custom" style="margin-bottom: 0;">
+                        <label class="form-label-custom">Status</label>
+                        <label class="toggle-switch-form">
+                            <input type="checkbox" name="is_active" value="1" {{ $menu->is_active ? 'checked' : '' }}>
+                            <span class="toggle-slider-form"></span>
+                            <span class="toggle-label">{{ $menu->is_active ? 'Aktif' : 'Nonaktif' }}</span>
+                        </label>
+                        <div class="form-text" style="margin-top: 8px;">
+                            <i class="fas fa-eye"></i>
+                            Menu nonaktif tidak akan ditampilkan di website
                         </div>
                     </div>
                 </div>
 
-                {{-- Form Actions --}}
+                {{-- Tombol Aksi --}}
                 <div class="form-actions">
-                    <button type="submit" class="btn-primary" id="submitBtn">
+                    <button type="submit" class="btn-primary-custom" id="submitBtn">
                         <i class="fas fa-save"></i> Update Menu
                     </button>
-                    <a href="{{ route('admin.menus.index') }}" class="btn-secondary">
+                    <a href="{{ route('admin.menus.index') }}" class="btn-secondary-custom">
                         <i class="fas fa-times"></i> Batal
                     </a>
                 </div>
@@ -516,31 +716,73 @@ body { font-family: 'DM Sans', sans-serif; background: var(--surface-2); color: 
         </div>
     </div>
 
-    {{-- Info Card --}}
-    <div class="info-card">
-        <div class="info-icon">
-            <i class="fas fa-info-circle"></i>
+    {{-- Tips Card --}}
+    <div class="tips-card">
+        <div class="tips-icon">
+            <i class="fas fa-lightbulb"></i>
         </div>
-        <div class="info-content">
-            <strong>Informasi Menu</strong>
-            <p>Menu yang aktif akan ditampilkan di navigasi website. Pastikan URL atau halaman yang dipilih valid untuk menghindari link rusak.</p>
+        <div class="tips-content">
+            <strong>Tips & Panduan:</strong>
+            <ul>
+                <li>Gunakan judul menu yang singkat dan mudah diingat (maksimal 30 karakter)</li>
+                <li>Menu dengan sub-menu akan otomatis menampilkan dropdown di frontend</li>
+                <li>URL Custom bisa digunakan untuk link eksternal atau halaman khusus</li>
+                <li>Urutan menu menentukan posisi tampilan (ascending dari kecil ke besar)</li>
+                <li>Menu dapat memiliki nested level unlimited (sub-menu dari sub-menu)</li>
+                <li>Menu nonaktif tidak akan ditampilkan meskipun sudah tersimpan</li>
+            </ul>
         </div>
     </div>
 </div>
 
 <script>
 function toggleLinkType() {
-    const isUrl = document.querySelector('input[name="link_type"]:checked')?.value === 'url';
+    const selectedRadio = document.querySelector('input[name="link_type"]:checked');
+    const isUrl = selectedRadio && selectedRadio.value === 'url';
+    
     const pageSelect = document.getElementById('pageSelect');
     const urlInput = document.getElementById('urlInput');
+    const pageSelectField = document.querySelector('select[name="page_id"]');
+    const urlField = document.querySelector('input[name="url"]');
     
-    if (pageSelect) pageSelect.classList.toggle('d-none', isUrl);
-    if (urlInput) urlInput.classList.toggle('d-none', !isUrl);
+    if (isUrl) {
+        if (pageSelect) pageSelect.classList.add('d-none');
+        if (urlInput) urlInput.classList.remove('d-none');
+        if (pageSelectField) pageSelectField.disabled = true;
+        if (urlField) urlField.disabled = false;
+    } else {
+        if (pageSelect) pageSelect.classList.remove('d-none');
+        if (urlInput) urlInput.classList.add('d-none');
+        if (pageSelectField) pageSelectField.disabled = false;
+        if (urlField) urlField.disabled = true;
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize toggle
     toggleLinkType();
+    
+    // Auto dismiss alert
+    const alertEl = document.getElementById('errorAlert');
+    if (alertEl) {
+        setTimeout(() => {
+            alertEl.style.transition = 'opacity 0.3s';
+            alertEl.style.opacity = '0';
+            setTimeout(() => alertEl.remove(), 300);
+        }, 5000);
+    }
+    
+    // Update toggle label text
+    const toggleCheckbox = document.querySelector('input[name="is_active"]');
+    const toggleLabel = document.querySelector('.toggle-label');
+    
+    if (toggleCheckbox && toggleLabel) {
+        const updateLabel = function() {
+            toggleLabel.textContent = this.checked ? 'Aktif' : 'Nonaktif';
+        };
+        toggleCheckbox.addEventListener('change', updateLabel);
+        updateLabel.call(toggleCheckbox);
+    }
     
     // Form validation and submission
     const form = document.getElementById('menuForm');
@@ -554,46 +796,43 @@ document.addEventListener('DOMContentLoaded', function() {
             // Validate title
             if (!title.value.trim()) {
                 e.preventDefault();
-                title.classList.add('error');
+                title.classList.add('is-invalid');
                 showNotification('Judul menu harus diisi', 'error');
                 title.focus();
                 return false;
             }
             
-            // Validate link type selection
+            // Validate link type
             if (!linkType) {
                 e.preventDefault();
-                showNotification('Pilih tipe link (Halaman atau URL Custom)', 'error');
+                showNotification('Pilih tipe link', 'error');
                 return false;
             }
             
-            // Validate page selection if page type
+            // Validate page or URL
             if (linkType.value === 'page') {
                 const pageSelect = form.querySelector('select[name="page_id"]');
                 if (!pageSelect.value) {
                     e.preventDefault();
-                    pageSelect.classList.add('error');
+                    pageSelect.classList.add('is-invalid');
                     showNotification('Pilih halaman yang akan ditautkan', 'error');
                     pageSelect.focus();
                     return false;
                 }
-            }
-            
-            // Validate URL if URL type
-            if (linkType.value === 'url') {
+            } else if (linkType.value === 'url') {
                 const urlInput = form.querySelector('input[name="url"]');
                 const urlValue = urlInput.value.trim();
                 if (!urlValue) {
                     e.preventDefault();
-                    urlInput.classList.add('error');
+                    urlInput.classList.add('is-invalid');
                     showNotification('URL tidak boleh kosong', 'error');
                     urlInput.focus();
                     return false;
                 }
-                if (!urlValue.startsWith('http://') && !urlValue.startsWith('https://')) {
+                if (!urlValue.startsWith('http://') && !urlValue.startsWith('https://') && !urlValue.startsWith('/')) {
                     e.preventDefault();
-                    urlInput.classList.add('error');
-                    showNotification('URL harus dimulai dengan http:// atau https://', 'error');
+                    urlInput.classList.add('is-invalid');
+                    showNotification('URL harus dimulai dengan http://, https://, atau /', 'error');
                     urlInput.focus();
                     return false;
                 }
@@ -608,10 +847,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Remove error styling on input
-    const inputs = document.querySelectorAll('.form-control, .form-select');
+    const inputs = document.querySelectorAll('.form-control-custom, .form-select-custom');
     inputs.forEach(input => {
         input.addEventListener('input', function() {
-            this.classList.remove('error');
+            this.classList.remove('is-invalid');
         });
     });
     
@@ -681,7 +920,6 @@ document.addEventListener('DOMContentLoaded', function() {
             from { transform: translateX(0); opacity: 1; }
             to { transform: translateX(100%); opacity: 0; }
         }
-        .d-none { display: none; }
     `;
     document.head.appendChild(style);
 });

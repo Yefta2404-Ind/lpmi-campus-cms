@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>LPMI Access · Portal Mutu | Universitas Gunung Kidul</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/logo-v2.png') }}">
 
     <!-- Google Fonts + Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -18,62 +19,58 @@
             box-sizing: border-box;
         }
 
-        /* === PALET SOHO (terintegrasi penuh) === */
+        /* === PALET BARU === */
         :root {
-            --primary:        #023341;   /* teal gelap */
-            --primary-light:  #0a4d60;   /* teal medium */
-            --primary-dark:   #011e28;   /* teal sangat tua */
-            --primary-mid:    #034055;   /* teal tengah */
+            --primary:        #0B4650;
+            --primary-light:  #155e6e;
+            --primary-dark:   #072e38;
+            --primary-mid:    #0e5262;
 
-            --gold:           #FD5E02;   /* oranye utama */
-            --gold-light:     #ff8040;   /* oranye terang */
-            --gold-dark:      #c94800;   /* oranye tua */
+            --gold:           #E6FF2B;
+            --gold-light:     #eeff55;
+            --gold-dark:      #c4db00;
 
-            --secondary:      #FCF5E3;   /* krem utama */
-            --accent:         #fdf8ee;   /* krem sangat terang */
-            --accent2:        #f5e9cc;   /* krem lebih hangat */
-            --text-dark:      #021a22;   /* teal sangat gelap */
-            --text-mid:       #1a4a58;   /* teal medium */
-            --text-light:     #3a6a7a;   /* teal muted */
+            --secondary:      #F9F7F2;
+            --accent:         #fdfcf9;
+            --accent2:        #f0ede5;
+            --text-dark:      #072e38;
+            --text-mid:       #0B4650;
+            --text-light:     #898A8D;
             --white:          #ffffff;
-            --border:         #e8d9b8;   /* border krem */
+            --border:         #dddbd5;
 
-            --shadow-sm:  0 2px 8px rgba(2,51,65,0.08);
-            --shadow-md:  0 8px 28px rgba(2,51,65,0.13);
-            --shadow-lg:  0 20px 50px rgba(2,51,65,0.16);
-            --shadow-xl:  0 32px 70px rgba(2,51,65,0.20);
+            --shadow-sm:  0 2px 8px rgba(11,70,80,0.08);
+            --shadow-md:  0 8px 28px rgba(11,70,80,0.13);
+            --shadow-lg:  0 20px 50px rgba(11,70,80,0.16);
+            --shadow-xl:  0 32px 70px rgba(11,70,80,0.20);
 
             --font-primary: 'DM Sans', sans-serif;
-            --font-roboto:  'DM Sans', sans-serif;
             --font-heading: 'Cormorant Garamond', serif;
-            --container-max: 1400px;
-            --container-pad: 40px;
             --radius-sm:  8px;
             --radius-md:  14px;
             --radius-lg:  22px;
             --radius-xl:  32px;
             --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
 
-            /* Variabel tambahan untuk kompatibilitas */
-            --navy: var(--primary);
-            --navy-mid: var(--primary-light);
-            --navy-deep: var(--primary-dark);
-            --gold-lt: var(--gold-light);
-            --gold-dim: rgba(253, 94, 2, 0.18);
-            --ink: var(--text-dark);
-            --muted: var(--text-light);
-            --off-white: var(--secondary);
-            --success-bg: #ecfdf5;
+            /* Alias untuk kompatibilitas */
+            --navy:       var(--primary);
+            --navy-mid:   var(--primary-light);
+            --navy-deep:  var(--primary-dark);
+            --gold-lt:    var(--gold-light);
+            --gold-dim:   rgba(230,255,43,0.18);
+            --ink:        var(--text-dark);
+            --muted:      var(--text-light);
+            --off-white:  var(--secondary);
+            --success-bg:     #ecfdf5;
             --success-border: #a7f3d0;
-            --success-text: #065f46;
-            --error-bg: #fef2f2;
-            --error-border: #fecaca;
-            --error-text: #991b1b;
+            --success-text:   #065f46;
+            --error-bg:       #fef2f2;
+            --error-border:   #fecaca;
+            --error-text:     #991b1b;
             --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        html,
-        body {
+        html, body {
             height: 100%;
             font-family: var(--font-primary);
         }
@@ -83,14 +80,14 @@
             align-items: center;
             justify-content: center;
             background: var(--secondary);
-            background-image: radial-gradient(circle at 10% 20%, rgba(253, 94, 2, 0.08) 2%, transparent 2.5%),
-                              radial-gradient(circle at 85% 70%, rgba(2, 51, 65, 0.05) 1.8%, transparent 2%);
+            background-image: radial-gradient(circle at 10% 20%, rgba(230,255,43,0.07) 2%, transparent 2.5%),
+                              radial-gradient(circle at 85% 70%, rgba(11,70,80,0.05) 1.8%, transparent 2%);
             background-size: 48px 48px, 36px 36px;
             padding: 1.5rem;
             min-height: 100vh;
         }
 
-        /* MAIN CARD - sentuhan modern */
+        /* MAIN CARD */
         .card {
             display: flex;
             width: 100%;
@@ -105,22 +102,16 @@
         }
 
         @keyframes rise {
-            0% {
-                opacity: 0;
-                transform: translateY(32px) scale(0.96);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+            0%   { opacity: 0; transform: translateY(32px) scale(0.96); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        /* LEFT PANEL — dengan palet SOHO (teal gelap + aksen oranye) */
+        /* LEFT PANEL */
         .panel-art {
             flex: 0 0 44%;
             position: relative;
             overflow: hidden;
-            background: var(--navy-deep);
+            background: var(--primary-dark);
         }
 
         .art-svg {
@@ -144,7 +135,7 @@
             justify-content: flex-end;
             padding: 2.5rem 2rem;
             z-index: 3;
-            background: linear-gradient(to top, rgba(1, 30, 40, 0.92) 0%, rgba(1, 30, 40, 0.35) 45%, transparent 100%);
+            background: linear-gradient(to top, rgba(7,46,56,0.92) 0%, rgba(7,46,56,0.35) 45%, transparent 100%);
         }
 
         .art-label {
@@ -160,13 +151,13 @@
 
         .art-label em {
             font-style: italic;
-            color: var(--gold-light);
+            color: var(--gold);
             font-weight: 500;
         }
 
         .art-inst {
             font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255,255,255,0.7);
             letter-spacing: 0.2em;
             text-transform: uppercase;
             font-weight: 400;
@@ -213,7 +204,7 @@
             padding-left: 0.7rem;
         }
 
-        /* ALERTS modern */
+        /* ALERTS */
         .alert {
             display: flex;
             align-items: center;
@@ -228,14 +219,8 @@
         }
 
         @keyframes slideAlert {
-            from {
-                opacity: 0;
-                transform: translateY(-12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-12px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
 
         .alert-success {
@@ -262,7 +247,7 @@
 
         .alert-close:hover {
             opacity: 1;
-            background: rgba(0, 0, 0, 0.05);
+            background: rgba(0,0,0,0.05);
         }
 
         /* FIELDS */
@@ -306,7 +291,7 @@
         }
 
         .input-wrap input:focus {
-            border-bottom-color: var(--gold);
+            border-bottom-color: var(--gold-dark);
         }
 
         .input-icon {
@@ -320,7 +305,7 @@
         }
 
         .input-wrap input:focus ~ .input-icon {
-            color: var(--gold);
+            color: var(--gold-dark);
         }
 
         .toggle-pw {
@@ -360,16 +345,14 @@
             gap: 0.25rem;
         }
 
-        .forgot-link i {
-            font-size: 0.65rem;
-        }
+        .forgot-link i { font-size: 0.65rem; }
 
         .forgot-link:hover {
             color: var(--navy);
             text-decoration: underline;
         }
 
-        /* BUTTON - menggunakan primary teal SOHO */
+        /* BUTTON */
         .btn-submit {
             width: 100%;
             padding: 0.9rem 1.2rem;
@@ -389,17 +372,15 @@
             align-items: center;
             justify-content: center;
             gap: 0.7rem;
-            box-shadow: 0 6px 12px -6px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 12px -6px rgba(11,70,80,0.35);
         }
 
         .btn-submit::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(120deg, rgba(230,255,43,0) 0%, rgba(230,255,43,0.15) 50%, rgba(230,255,43,0) 100%);
             transform: translateX(-100%);
             transition: transform 0.5s ease;
         }
@@ -407,27 +388,21 @@
         .btn-submit:hover {
             background: var(--navy-mid);
             transform: translateY(-2px);
-            box-shadow: 0 14px 22px -10px rgba(2, 51, 65, 0.35);
+            box-shadow: 0 14px 22px -10px rgba(11,70,80,0.45);
         }
 
         .btn-submit:hover::after {
             transform: translateX(100%);
         }
 
-        .btn-submit:active {
-            transform: translateY(1px);
-        }
+        .btn-submit:active { transform: translateY(1px); }
 
         .btn-submit.loading {
             pointer-events: none;
             opacity: 0.8;
         }
 
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
         .btn-submit.loading .btn-icon {
             animation: spin 0.85s linear infinite;
@@ -451,10 +426,7 @@
             gap: 0.5rem;
         }
 
-        .footer-support i {
-            color: var(--gold);
-            font-size: 0.7rem;
-        }
+        .footer-support i { color: var(--gold-dark); font-size: 0.7rem; }
 
         .footer-version {
             font-size: 0.65rem;
@@ -464,7 +436,7 @@
             gap: 0.4rem;
         }
 
-        /* TOAST CUSTOM */
+        /* TOAST */
         .toast {
             position: fixed;
             bottom: 32px;
@@ -478,13 +450,13 @@
             font-weight: 500;
             opacity: 0;
             pointer-events: none;
-            border: 1px solid rgba(253, 94, 2, 0.45);
+            border: 1px solid rgba(230,255,43,0.4);
             backdrop-filter: blur(8px);
             transition: all 0.25s var(--ease-out);
             z-index: 9999;
             white-space: nowrap;
             letter-spacing: 0.01em;
-            box-shadow: 0 10px 18px -6px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 18px -6px rgba(0,0,0,0.2);
         }
 
         .toast.show {
@@ -492,12 +464,9 @@
             transform: translateX(-50%) translateY(0);
         }
 
-        /* RESPONSIVE BREAKPOINTS */
+        /* RESPONSIVE */
         @media (max-width: 820px) {
-            body {
-                padding: 1rem;
-                align-items: flex-start;
-            }
+            body { padding: 1rem; align-items: flex-start; }
 
             .card {
                 flex-direction: column;
@@ -507,36 +476,16 @@
                 margin: 0 auto;
             }
 
-            .panel-art {
-                flex: 0 0 240px;
-                height: 240px;
-            }
-
-            .panel-art-content {
-                padding: 1.5rem 1.6rem;
-            }
-
-            .art-label {
-                font-size: 2rem;
-            }
-
-            .panel-form {
-                padding: 2rem 1.8rem;
-            }
+            .panel-art { flex: 0 0 240px; height: 240px; }
+            .panel-art-content { padding: 1.5rem 1.6rem; }
+            .art-label { font-size: 2rem; }
+            .panel-form { padding: 2rem 1.8rem; }
         }
 
         @media (max-width: 540px) {
-            .panel-form {
-                padding: 1.8rem 1.4rem;
-            }
-
-            .form-title {
-                font-size: 2rem;
-            }
-
-            .btn-submit {
-                padding: 0.75rem 1rem;
-            }
+            .panel-form { padding: 1.8rem 1.4rem; }
+            .form-title { font-size: 2rem; }
+            .btn-submit { padding: 0.75rem 1rem; }
 
             .toast {
                 white-space: normal;
@@ -548,14 +497,8 @@
         }
 
         @media (max-width: 400px) {
-            .panel-form {
-                padding: 1.5rem 1rem;
-            }
-
-            .art-label {
-                font-size: 1.7rem;
-                letter-spacing: 0.1em;
-            }
+            .panel-form { padding: 1.5rem 1rem; }
+            .art-label { font-size: 1.7rem; letter-spacing: 0.1em; }
         }
     </style>
 </head>
@@ -564,17 +507,17 @@
 
 <div class="card">
 
-    <!-- LEFT PANEL - Immersive SVG dengan palet SOHO (teal gelap & oranye) -->
+    <!-- LEFT PANEL - SVG dengan palet baru (teal gelap & lime yellow) -->
     <div class="panel-art">
         <svg class="art-svg" viewBox="0 0 400 620" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
             <defs>
                 <radialGradient id="moonGlow" cx="70%" cy="16%" r="32%">
-                    <stop offset="0%" stop-color="#0a4d60" stop-opacity="0.75" />
-                    <stop offset="100%" stop-color="#011e28" stop-opacity="0" />
+                    <stop offset="0%" stop-color="#155e6e" stop-opacity="0.75" />
+                    <stop offset="100%" stop-color="#072e38" stop-opacity="0" />
                 </radialGradient>
                 <radialGradient id="templeLight" cx="48%" cy="48%" r="24%">
-                    <stop offset="0%" stop-color="#FD5E02" stop-opacity="0.28" />
-                    <stop offset="100%" stop-color="#c94800" stop-opacity="0" />
+                    <stop offset="0%" stop-color="#E6FF2B" stop-opacity="0.18" />
+                    <stop offset="100%" stop-color="#c4db00" stop-opacity="0" />
                 </radialGradient>
                 <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
                     <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
@@ -585,8 +528,8 @@
                 </filter>
             </defs>
 
-            <!-- langit malam dengan primary-dark -->
-            <rect width="400" height="620" fill="#011e28" />
+            <!-- Langit malam -->
+            <rect width="400" height="620" fill="#072e38" />
             <rect width="400" height="620" fill="url(#moonGlow)" />
 
             <!-- Stars -->
@@ -608,83 +551,79 @@
                 <circle cx="380" cy="48" r="0.7" />
             </g>
 
-            <!-- Bulan dengan aura oranye lembut -->
-            <circle cx="290" cy="62" r="28" fill="#FD5E02" opacity="0.12" />
-            <circle cx="290" cy="62" r="20" fill="#ff8040" opacity="0.2" />
-            <circle cx="290" cy="62" r="12" fill="#ffaa66" opacity="0.35" />
+            <!-- Bulan dengan aura lime -->
+            <circle cx="290" cy="62" r="28" fill="#E6FF2B" opacity="0.07" />
+            <circle cx="290" cy="62" r="20" fill="#eeff55" opacity="0.12" />
+            <circle cx="290" cy="62" r="12" fill="#f5ff99" opacity="0.22" />
 
-            <!-- Pegunungan jarak tengah (primary-mid & primary-light) -->
-            <path d="M0,320 L55,210 L115,255 L165,190 L225,230 L280,170 L340,215 L400,190 L400,620 L0,620Z" fill="#034055" />
-            <path d="M0,380 L45,275 L100,310 L150,250 L210,285 L265,240 L325,280 L400,260 L400,620 L0,620Z" fill="#0a4d60" />
+            <!-- Pegunungan (shades teal) -->
+            <path d="M0,320 L55,210 L115,255 L165,190 L225,230 L280,170 L340,215 L400,190 L400,620 L0,620Z" fill="#0e5262" />
+            <path d="M0,380 L45,275 L100,310 L150,250 L210,285 L265,240 L325,280 L400,260 L400,620 L0,620Z" fill="#155e6e" />
 
             <!-- Cahaya candi -->
             <rect width="400" height="620" fill="url(#templeLight)" />
 
-            <!-- Candi utama dengan aksen oranye SOHO -->
+            <!-- Candi dengan aksen lime yellow -->
             <g transform="translate(140, 270)">
-                <!-- base -->
-                <rect x="12" y="60" width="74" height="48" rx="3" fill="#c94800" opacity="0.95" />
-                <rect x="20" y="68" width="12" height="12" rx="1.5" fill="#ff8040" opacity="0.6" />
-                <rect x="66" y="68" width="12" height="12" rx="1.5" fill="#ff8040" opacity="0.6" />
-                <rect x="37" y="78" width="24" height="30" rx="2" fill="#8a3e00" />
-                <!-- middle tier -->
-                <rect x="18" y="42" width="62" height="24" rx="2" fill="#FD5E02" opacity="0.9" />
-                <rect x="28" y="48" width="10" height="8" rx="1" fill="#ffaa66" opacity="0.7" />
-                <rect x="60" y="48" width="10" height="8" rx="1" fill="#ffaa66" opacity="0.7" />
-                <!-- roof tiers -->
-                <polygon points="0,42 49,16 98,42" fill="#c94800" />
-                <polygon points="6,42 49,21 92,42" fill="#FD5E02" />
-                <rect x="42" y="4" width="14" height="16" rx="1" fill="#ff8040" />
-                <polygon points="38,8 49,-2 60,8" fill="#ffaa66" />
-                <!-- ornament -->
-                <line x1="5" y1="42" x2="5" y2="48" stroke="#FD5E02" stroke-width="1.8" opacity="0.9" />
-                <line x1="93" y1="42" x2="93" y2="48" stroke="#FD5E02" stroke-width="1.8" opacity="0.9" />
+                <rect x="12" y="60" width="74" height="48" rx="3" fill="#0B4650" opacity="0.95" />
+                <rect x="20" y="68" width="12" height="12" rx="1.5" fill="#E6FF2B" opacity="0.4" />
+                <rect x="66" y="68" width="12" height="12" rx="1.5" fill="#E6FF2B" opacity="0.4" />
+                <rect x="37" y="78" width="24" height="30" rx="2" fill="#072e38" />
+                <rect x="18" y="42" width="62" height="24" rx="2" fill="#0e5262" opacity="0.9" />
+                <rect x="28" y="48" width="10" height="8" rx="1" fill="#E6FF2B" opacity="0.5" />
+                <rect x="60" y="48" width="10" height="8" rx="1" fill="#E6FF2B" opacity="0.5" />
+                <polygon points="0,42 49,16 98,42" fill="#072e38" />
+                <polygon points="6,42 49,21 92,42" fill="#0B4650" />
+                <rect x="42" y="4" width="14" height="16" rx="1" fill="#155e6e" />
+                <polygon points="38,8 49,-2 60,8" fill="#E6FF2B" opacity="0.6" />
+                <line x1="5" y1="42" x2="5" y2="48" stroke="#E6FF2B" stroke-width="1.8" opacity="0.7" />
+                <line x1="93" y1="42" x2="93" y2="48" stroke="#E6FF2B" stroke-width="1.8" opacity="0.7" />
             </g>
 
-            <!-- Hutan latar depan (primary-dark) -->
-            <g fill="#011e28" opacity="0.95">
+            <!-- Hutan latar depan -->
+            <g fill="#072e38" opacity="0.95">
                 <ellipse cx="12" cy="510" rx="46" ry="100" />
                 <ellipse cx="60" cy="525" rx="38" ry="88" />
                 <ellipse cx="345" cy="505" rx="48" ry="102" />
                 <ellipse cx="390" cy="520" rx="32" ry="84" />
             </g>
 
-            <!-- Dedauanan tengah (teal tua) -->
-            <g fill="#023341" opacity="0.9">
+            <!-- Dedaunan tengah (teal) -->
+            <g fill="#0B4650" opacity="0.9">
                 <ellipse cx="85" cy="470" rx="62" ry="32" />
                 <ellipse cx="180" cy="460" rx="70" ry="34" />
                 <ellipse cx="285" cy="465" rx="65" ry="30" />
             </g>
 
-            <!-- Aksen emas/oranye pada dedaunan -->
-            <g opacity="0.7">
-                <ellipse cx="100" cy="448" rx="20" ry="12" fill="#c94800" />
-                <ellipse cx="210" cy="440" rx="24" ry="14" fill="#FD5E02" />
-                <ellipse cx="300" cy="450" rx="18" ry="10" fill="#8a3e00" />
-                <ellipse cx="150" cy="452" rx="14" ry="8" fill="#ff8040" />
+            <!-- Aksen lime pada dedaunan -->
+            <g opacity="0.5">
+                <ellipse cx="100" cy="448" rx="20" ry="12" fill="#c4db00" />
+                <ellipse cx="210" cy="440" rx="24" ry="14" fill="#E6FF2B" />
+                <ellipse cx="300" cy="450" rx="18" ry="10" fill="#c4db00" />
+                <ellipse cx="150" cy="452" rx="14" ry="8" fill="#eeff55" />
             </g>
 
             <!-- Path cahaya menuju candi -->
-            <path d="M178,620 L198,530 L215,470 L205,490 L188,530 L178,620Z" fill="rgba(253,94,2,0.12)" />
-            <path d="M230,620 L210,530 L195,470" fill="none" stroke="rgba(253,94,2,0.18)" stroke-width="10" />
+            <path d="M178,620 L198,530 L215,470 L205,490 L188,530 L178,620Z" fill="rgba(230,255,43,0.07)" />
+            <path d="M230,620 L210,530 L195,470" fill="none" stroke="rgba(230,255,43,0.12)" stroke-width="10" />
 
-            <!-- Lentera kuno -->
-            <line x1="142" y1="420" x2="142" y2="470" stroke="#FD5E02" stroke-width="2.5" opacity="0.7" />
-            <rect x="134" y="410" width="16" height="14" rx="2" fill="#FD5E02" opacity="0.7" />
-            <rect x="138" y="413" width="8" height="8" rx="1" fill="#ffaa66" opacity="0.8" />
-            <line x1="270" y1="428" x2="270" y2="475" stroke="#FD5E02" stroke-width="2.5" opacity="0.65" />
-            <rect x="262" y="418" width="16" height="14" rx="2" fill="#FD5E02" opacity="0.65" />
-            <rect x="266" y="421" width="8" height="8" rx="1" fill="#ffaa66" opacity="0.75" />
+            <!-- Lentera -->
+            <line x1="142" y1="420" x2="142" y2="470" stroke="#E6FF2B" stroke-width="2.5" opacity="0.55" />
+            <rect x="134" y="410" width="16" height="14" rx="2" fill="#0e5262" opacity="0.9" />
+            <rect x="138" y="413" width="8" height="8" rx="1" fill="#E6FF2B" opacity="0.6" />
+            <line x1="270" y1="428" x2="270" y2="475" stroke="#E6FF2B" stroke-width="2.5" opacity="0.5" />
+            <rect x="262" y="418" width="16" height="14" rx="2" fill="#0e5262" opacity="0.85" />
+            <rect x="266" y="421" width="8" height="8" rx="1" fill="#E6FF2B" opacity="0.55" />
 
-            <!-- Kunang-kunang magis dengan warna oranye -->
-            <circle cx="174" cy="388" r="2.2" fill="#ffaa66" opacity="0.8" filter="url(#softGlow)" />
-            <circle cx="234" cy="365" r="1.8" fill="#ffaa66" opacity="0.65" />
-            <circle cx="148" cy="412" r="2" fill="#FD5E02" opacity="0.75" />
-            <circle cx="260" cy="395" r="1.5" fill="#ff8040" opacity="0.6" />
-            <circle cx="200" cy="372" r="1.6" fill="#ffcc88" opacity="0.8" />
+            <!-- Kunang-kunang lime -->
+            <circle cx="174" cy="388" r="2.2" fill="#eeff55" opacity="0.7" filter="url(#softGlow)" />
+            <circle cx="234" cy="365" r="1.8" fill="#E6FF2B" opacity="0.55" />
+            <circle cx="148" cy="412" r="2" fill="#c4db00" opacity="0.65" />
+            <circle cx="260" cy="395" r="1.5" fill="#eeff55" opacity="0.5" />
+            <circle cx="200" cy="372" r="1.6" fill="#f5ff99" opacity="0.7" />
 
             <!-- Tanah dasar -->
-            <rect x="0" y="550" width="400" height="70" fill="#011e28" />
+            <rect x="0" y="550" width="400" height="70" fill="#072e38" />
         </svg>
 
         <div class="panel-art-content">
@@ -754,10 +693,9 @@
 
 <script>
     (function() {
-        // Toggle password
         const toggleBtn = document.getElementById('togglePw');
-        const pwField = document.getElementById('password');
-        const pwIcon = document.getElementById('pwIcon');
+        const pwField   = document.getElementById('password');
+        const pwIcon    = document.getElementById('pwIcon');
 
         if (toggleBtn && pwField) {
             toggleBtn.addEventListener('click', () => {
@@ -768,7 +706,6 @@
             });
         }
 
-        // Auto dismiss alerts
         function dismissAlert(id, delay) {
             const el = document.getElementById(id);
             if (!el) return;
@@ -782,7 +719,6 @@
         dismissAlert('alertSession', 5000);
         dismissAlert('alertError', 7000);
 
-        // Toast system
         function showToast(msg, duration = 3200) {
             const toast = document.getElementById('toast');
             if (!toast) return;
@@ -792,16 +728,15 @@
             toast._timer = setTimeout(() => toast.classList.remove('show'), duration);
         }
 
-        // Form validation + loading state
-        const form = document.getElementById('loginForm');
-        const loginBtn = document.getElementById('loginBtn');
-        const emailInput = document.getElementById('email');
+        const form          = document.getElementById('loginForm');
+        const loginBtn      = document.getElementById('loginBtn');
+        const emailInput    = document.getElementById('email');
         const passwordInput = document.getElementById('password');
 
         if (form && loginBtn) {
             form.addEventListener('submit', function(e) {
                 let emailVal = emailInput?.value.trim() || '';
-                let passVal = passwordInput?.value || '';
+                let passVal  = passwordInput?.value || '';
 
                 if (!emailVal) {
                     e.preventDefault();
@@ -823,10 +758,9 @@
                     return;
                 }
 
-                // Tampilkan loading state
-                const btnIcon = loginBtn.querySelector('.btn-icon');
+                const btnIcon  = loginBtn.querySelector('.btn-icon');
                 const btnLabel = loginBtn.querySelector('.btn-label');
-                if (btnIcon) btnIcon.className = 'fas fa-circle-notch btn-icon';
+                if (btnIcon)  btnIcon.className = 'fas fa-circle-notch btn-icon';
                 if (btnLabel) btnLabel.textContent = 'Memproses ...';
                 loginBtn.classList.add('loading');
             });

@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\News;
+use App\Models\OrganizationStructure;
+use App\Models\StudyProgram;
 use App\Models\Agenda;
+use App\Models\OrganizationMember;
 use App\Models\Category;
+use App\Models\FacultyProfile;
 use App\Models\Video;
 use App\Models\HeroBanner;
 use App\Models\Survey;
+use App\Models\QuickAccess;
 use App\Models\NewsImage;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
@@ -155,15 +160,39 @@ public function publicHome()
         ->first();
 
     $heroBanners = HeroBanner::active()->get();
-    $activeSurvey = Survey::where('status', 'approved')->latest()->first();
 
-    return view('public.home', compact(
-        'heroBanners',
-        'news',
-        'agendas',
-        'featuredVideo',
-        'activeSurvey'
-    ));
+    $activeSurvey = Survey::where('status', 'approved')
+        ->latest()
+        ->first();
+
+    $studyPrograms = StudyProgram::where('is_active', true)
+        ->latest()
+        ->take(6)
+        ->get();
+
+    $quickAccesses = QuickAccess::where('is_active', true)
+    ->orderBy('order')
+    ->get();
+
+    // TAMBAHAN
+    $profile = FacultyProfile::with(['misi', 'tujuan'])->first();
+
+$organizationMembers = OrganizationMember::latest()
+    ->take(4)
+    ->get();
+
+
+return view('public.home', compact(
+    'heroBanners',
+    'news',
+    'agendas',
+    'featuredVideo',
+    'activeSurvey',
+    'studyPrograms',
+    'profile',
+    'organizationMembers',
+    'quickAccesses'
+));
 }
 
 public function showPublic(News $news)

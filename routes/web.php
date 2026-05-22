@@ -6,9 +6,13 @@ use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\ProfileController;
 use App\Models\News;
+use App\Http\Controllers\Admin\MaintenanceController;
 use Carbon\Carbon;
+use App\Http\Controllers\Admin\QuickAccessController;
+use App\Http\Controllers\Admin\FacultyProfileController;
 use App\Http\Controllers\Admin\PopupBannerController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\DeanProfileController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\HeroBannerController;
 use App\Http\Controllers\OrganizationStructureController;
@@ -23,6 +27,7 @@ use App\Http\Controllers\Admin\SiteSettingController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\SpmiDocumentController as AdminSpmi;
 use App\Models\Survey;
+use App\Http\Controllers\Admin\StudyProgramController;
 use App\Http\Controllers\Admin\AdminProfileController;
 use App\Models\Page;
 
@@ -199,9 +204,27 @@ Route::middleware(['auth', 'role:admin,superadmin'])
             ->name('dashboard');
             
 
+        Route::post('/maintenance/down', [MaintenanceController::class, 'down'])
+    ->name('maintenance.down');
+
+        Route::post('/maintenance/up', [MaintenanceController::class, 'up'])
+    ->name('maintenance.up');
+
+        Route::get('/faculty-profile', [FacultyProfileController::class, 'edit'])
+        ->name('faculty-profile.edit');
+
+    Route::post('/faculty-profile', [FacultyProfileController::class, 'update'])
+        ->name('faculty-profile.update');
+
+    /* ================= PROGRAM STUDI (ADMIN) ================= */
+    Route::resource('study-programs', StudyProgramController::class);
+
         // ✅ BENAR — nama jadi admin.settings.edit & admin.settings.update
         Route::get('/settings', [SiteSettingController::class, 'edit'])->name('settings.edit');
         Route::put('/settings', [SiteSettingController::class, 'update'])->name('settings.update');
+
+
+        Route::resource('quick-access', QuickAccessController::class);
 
         /* ================= SPMI DOCUMENT (ADMIN) ================= */
 
@@ -231,6 +254,10 @@ Route::post('/spmi/{id}/approve',
 Route::post('/spmi/{id}/reject',
     [AdminSpmi::class, 'reject']
 )->name('spmi.reject');
+
+
+    Route::get('/dean/edit', [DeanProfileController::class, 'edit']);
+    Route::post('/dean/update', [DeanProfileController::class, 'update']);
 
 /* ================= SURVEY (ADMIN) ================= */
 Route::get('/surveys', [SurveyController::class, 'index'])->name('surveys.index');
